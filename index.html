@@ -40,6 +40,13 @@
         .skill-bar {
             transition: width 1s ease;
         }
+        .logo-img {
+            height: 40px; /* Adjust height as needed */
+            width: 40px; /* Adjust width as needed */
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #a78bfa; /* Optional: adds a subtle border */
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white overflow-x-hidden">
@@ -47,9 +54,9 @@
     <nav class="fixed top-0 w-full bg-gray-900/80 backdrop-blur-lg z-50 border-b border-purple-500/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    AY
-                </div>
+                <a href="#home" class="flex items-center">
+                    <img src="https://image2url.com/images/1762088304982-ad06a7f4-c767-471b-8440-0ad33f05de1c.png" alt="Ayush Yadav Logo" class="logo-img">
+                </a>
                 
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-underline hover:text-purple-400 transition-colors duration-300">Home</a>
@@ -83,7 +90,7 @@
         <div class="max-w-6xl mx-auto text-center">
             <div class="mb-8 animate-fade-in">
                 <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-5xl shadow-2xl shadow-purple-500/50">
-                    👨‍💻
+                    <img src="https://image2url.com/images/1762088304982-ad06a7f4-c767-471b-8440-0ad33f05de1c.png" alt="Ayush Yadav" class="w-full h-full rounded-full object-cover">
                 </div>
             </div>
             
@@ -283,7 +290,7 @@
             
             <div class="grid md:grid-cols-2 gap-8">
                 
-                <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition-all hover:scale-105 group">
+                <a href="https://ayush-7985.github.io/stocks-calculator/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition-all hover:scale-105 group">
                     <div class="flex justify-between items-start mb-4">
                         <span class="text-5xl">💹</span>
                         <span class="px-3 py-1 bg-green-500/20 rounded-full text-sm text-green-300">Live Tool</span>
@@ -303,17 +310,18 @@
                         <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm border border-purple-500/30">JavaScript</span>
                     </div>
                     
-                    <a href="https://ayush-7985.github.io/stocks-calculator/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors">
+                    <div class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors">
                         View Live Project
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
-                    </a>
-                </div>
-                <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition-all hover:scale-105 group">
+                    </div>
+                </a>
+
+                <a href="https://gig-mate.netlify.app" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition-all hover:scale-105 group">
                     <div class="flex justify-between items-start mb-4">
                         <span class="text-5xl">👥</span>
-                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm">Live</span>
+                        <span class="px-3 py-1 bg-green-500/20 rounded-full text-sm text-green-300">Live</span>
                     </div>
                     
                     <h3 class="text-2xl font-bold mb-3 group-hover:text-purple-400 transition-colors">
@@ -330,18 +338,18 @@
                         <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm border border-purple-500/30">JavaScript</span>
                     </div>
                     
-                    <button class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors">
+                    <div class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors">
                         Learn More
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
-                    </button>
-                </div>
-
-                <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition-all hover:scale-105 group">
+                    </div>
+                </a>
+                
+                <a href="#" class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition-all hover:scale-105 group">
                     <div class="flex justify-between items-start mb-4">
                         <span class="text-5xl">💻</span>
-                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm">Ongoing</span>
+                        <span class="px-3 py-1 bg-yellow-500/20 rounded-full text-sm text-yellow-300">Ongoing</span>
                     </div>
                     
                     <h3 class="text-2xl font-bold mb-3 group-hover:text-purple-400 transition-colors">
@@ -358,18 +366,18 @@
                         <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm border border-purple-500/30">System Tools</span>
                     </div>
                     
-                    <button class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors">
+                    <div class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors">
                         Learn More
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
-                    </button>
-                </div>
+                    </div>
+                </a>
 
-                <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition-all hover:scale-105 group">
+                <a href="#" class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition-all hover:scale-105 group">
                     <div class="flex justify-between items-start mb-4">
                         <span class="text-5xl">📈</span>
-                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm">Beta</span>
+                        <span class="px-3 py-1 bg-blue-500/20 rounded-full text-sm text-blue-300">Beta</span>
                     </div>
                     
                     <h3 class="text-2xl font-bold mb-3 group-hover:text-purple-400 transition-colors">
@@ -386,18 +394,18 @@
                         <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm border border-purple-500/30">Charts</span>
                     </div>
                     
-                    <button class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors">
+                    <div class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors">
                         Learn More
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
-                    </button>
-                </div>
+                    </div>
+                </a>
 
-                <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition-all hover:scale-105 group">
+                <a href="#" class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition-all hover:scale-105 group">
                     <div class="flex justify-between items-start mb-4">
                         <span class="text-5xl">📚</span>
-                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm">Active</span>
+                        <span class="px-3 py-1 bg-green-500/20 rounded-full text-sm text-green-300">Active</span>
                     </div>
                     
                     <h3 class="text-2xl font-bold mb-3 group-hover:text-purple-400 transition-colors">
@@ -414,13 +422,13 @@
                         <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm border border-purple-500/30">JavaScript</span>
                     </div>
                     
-                    <button class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors">
+                    <div class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors">
                         Learn More
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
-                    </button>
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -494,9 +502,10 @@
                 </div>
                 
                 <div class="order-3 md:order-1">
-                    <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-                        Ayush Yadav
-                    </div>
+                    <a href="#home" class="flex items-center gap-2 mb-4">
+                        <img src="https://i.ibb.co/L5hY6J3/IMG-20240723-WA0001.jpg" alt="Ayush Yadav Logo" class="logo-img">
+                        <span class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Ayush Yadav</span>
+                    </a>
                     <p class="text-gray-400 text-sm">
                         Building creative digital solutions while learning modern tech hands-on. Focus + Fun + Savage Honesty = Real Growth.
                     </p>
