@@ -1,500 +1,1595 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayush Yadav | Future Tech Innovator</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<!-- CHANGE HERE: page title -->
+<title>Ayush Yadav — Building the internet's next chapter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        mono: ['Space Grotesk', 'monospace'],
-                    },
-                    colors: {
-                        dark: '#020617',
-                        primary: '#8b5cf6',
-                        secondary: '#ec4899',
-                        accent: '#06b6d4'
-                    },
-                    animation: {
-                        'blob': 'blob 7s infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+<style>
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TOKENS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+:root {
+  --ink:     #060410;
+  --ink2:    #0c0920;
+  --glass:   rgba(255,255,255,0.032);
+  --rim:     rgba(255,255,255,0.075);
+  --rim2:    rgba(255,255,255,0.12);
+  --w1:      #ffffff;
+  --w2:      rgba(255,255,255,0.6);
+  --w3:      rgba(255,255,255,0.3);
+  --w4:      rgba(255,255,255,0.12);
+  /* CHANGE HERE: accent colors */
+  --a:       #5d4fff;   /* violet */
+  --b:       #00e5ff;   /* cyan */
+  --c:       #ff2d78;   /* hot-pink */
+  --d:       #0bffb2;   /* mint */
+  --a-glow:  rgba(93,79,255,0.35);
+  --b-glow:  rgba(0,229,255,0.3);
+  --c-glow:  rgba(255,45,120,0.3);
+  --f-head:  'Outfit', sans-serif;
+  --f-mono:  'Space Mono', monospace;
+}
 
-    <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #020617;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #4c1d95;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #6d28d9;
-        }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  font-family:var(--f-head);
+  background:var(--ink);
+  color:var(--w1);
+  overflow-x:hidden;
+  cursor:none;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:rgba(93,79,255,.4);color:#fff;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--ink);}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--a),var(--b));border-radius:9px;}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
 
-        /* Tech Background Grid */
-        .bg-grid {
-            background-size: 50px 50px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-        }
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CURSOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#c-dot{
+  position:fixed;top:0;left:0;width:7px;height:7px;
+  background:var(--b);border-radius:50%;
+  pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 12px var(--b);
+  transition:width .15s,height .15s,background .2s;
+}
+#c-ring{
+  position:fixed;top:0;left:0;width:32px;height:32px;
+  border:1.5px solid rgba(93,79,255,.55);border-radius:50%;
+  pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:width .3s,height .3s,border-color .3s;
+}
+.cursor-big #c-dot{width:12px;height:12px;background:var(--a);}
+.cursor-big #c-ring{width:52px;height:52px;border-color:var(--a);}
 
-        /* Glassmorphism Utilities */
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .glass-nav {
-            background: rgba(2, 6, 23, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
-        }
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LOADER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#loader{
+  position:fixed;inset:0;z-index:10000;
+  background:var(--ink);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:20px;
+}
+#loader .l-logo{
+  font-family:var(--f-head);font-size:clamp(2rem,6vw,3.5rem);font-weight:900;
+  letter-spacing:-.04em;
+  background:linear-gradient(135deg,var(--a),var(--b),var(--c));
+  background-clip:text;-webkit-background-clip:text;color:transparent;
+  background-size:300% 300%;animation:lg 2.5s ease infinite;
+}
+@keyframes lg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+.l-track{width:180px;height:2px;background:rgba(255,255,255,.08);border-radius:9px;overflow:hidden;}
+.l-fill{height:100%;background:linear-gradient(90deg,var(--a),var(--b));animation:lf 2.4s ease forwards;}
+@keyframes lf{from{width:0}to{width:100%}}
+.l-msg{font-family:var(--f-mono);font-size:.65rem;color:var(--w3);letter-spacing:.14em;}
+#loader.out{animation:lo .6s ease forwards;}
+@keyframes lo{to{opacity:0;pointer-events:none;visibility:hidden;}}
 
-        .text-glow {
-            text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
-        }
-        
-        .card-hover:hover {
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
-            border-color: rgba(139, 92, 246, 0.3);
-        }
-    </style>
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   BG CANVAS + SPOTLIGHT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#bg-c{position:fixed;inset:0;z-index:0;pointer-events:none;}
+#spotlight{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(700px circle at 50% 30%, rgba(93,79,255,.055),transparent 70%);
+  transition:background .08s;
+}
+.noise{
+  position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;
+}
+/* Ambient orbs */
+.orb{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0;}
+.o1{width:55vw;height:55vw;background:var(--a);opacity:.07;top:-20%;right:-15%;animation:of 9s ease-in-out infinite;}
+.o2{width:45vw;height:45vw;background:var(--c);opacity:.06;bottom:-10%;left:-15%;animation:of 11s ease-in-out infinite reverse;}
+.o3{width:30vw;height:30vw;background:var(--b);opacity:.04;top:40%;left:35%;animation:of 13s ease-in-out infinite 2s;}
+@keyframes of{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,30px) scale(1.06)}}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SCROLL BAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#sprogress{
+  position:fixed;top:0;left:0;height:2px;z-index:999;
+  background:linear-gradient(90deg,var(--a),var(--b),var(--c));
+  transition:width .1s linear;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LAYOUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.wrap{position:relative;z-index:3;}
+.ctr{width:100%;max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   NAV
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+nav{
+  position:fixed;top:0;left:50%;transform:translateX(-50%);
+  z-index:500;
+  width:calc(100% - clamp(24px,5vw,64px));
+  max-width:1000px;
+  margin-top:clamp(10px,2vw,18px);
+  padding:clamp(10px,2vw,14px) clamp(16px,3vw,28px);
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(6,4,16,.65);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border:1px solid var(--rim);
+  border-radius:100px;
+  transition:all .4s;
+}
+nav.scrolled{background:rgba(6,4,16,.88);border-color:rgba(93,79,255,.22);box-shadow:0 8px 32px rgba(0,0,0,.5);}
+.nav-logo{
+  font-weight:900;font-size:clamp(.95rem,2vw,1.1rem);letter-spacing:-.03em;
+  background:linear-gradient(135deg,var(--w1),var(--w2));
+  background-clip:text;-webkit-background-clip:text;color:transparent;
+}
+.nav-logo em{font-style:normal;color:var(--b);}
+.nav-links{display:flex;gap:clamp(2px,1vw,4px);list-style:none;}
+.nav-links a{
+  padding:6px clamp(8px,1.5vw,14px);
+  font-size:clamp(.72rem,1.3vw,.82rem);font-weight:500;
+  color:var(--w2);border-radius:100px;
+  transition:all .25s;
+}
+.nav-links a:hover{color:var(--w1);background:var(--glass);}
+.nav-cta-link{
+  background:linear-gradient(135deg,var(--a),var(--c)) !important;
+  color:#fff !important;font-weight:700 !important;
+  box-shadow:0 4px 14px rgba(93,79,255,.35);
+}
+.nav-cta-link:hover{box-shadow:0 8px 24px rgba(93,79,255,.5) !important;transform:translateY(-1px);}
+.nav-ham{display:none;background:none;border:none;color:var(--w1);font-size:1.5rem;cursor:none;padding:4px;}
+
+/* mobile menu */
+#m-menu{
+  display:none;position:fixed;inset:0;z-index:600;
+  background:rgba(4,2,14,.97);backdrop-filter:blur(30px);
+  flex-direction:column;align-items:center;justify-content:center;gap:clamp(1.5rem,4vw,2.5rem);
+}
+#m-menu.open{display:flex;}
+#m-menu a{
+  font-family:var(--f-head);font-size:clamp(1.8rem,7vw,2.8rem);font-weight:900;letter-spacing:-.04em;
+  color:var(--w1);opacity:0;transform:translateY(24px);
+  animation:mi .45s ease forwards;transition:color .2s;
+}
+#m-menu a:hover{color:var(--b);}
+@keyframes mi{to{opacity:1;transform:none}}
+#m-menu a:nth-child(1){animation-delay:.05s}
+#m-menu a:nth-child(2){animation-delay:.1s}
+#m-menu a:nth-child(3){animation-delay:.15s}
+#m-menu a:nth-child(4){animation-delay:.2s}
+#m-menu a:nth-child(5){animation-delay:.25s}
+#m-menu a:nth-child(6){animation-delay:.3s}
+.m-close{position:absolute;top:clamp(16px,3vw,28px);right:clamp(16px,3vw,28px);background:none;border:none;color:var(--w1);font-size:clamp(1.5rem,4vw,2.2rem);cursor:none;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   REVEAL SYSTEM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease;}
+.rv.in{opacity:1;transform:none;}
+.rv-l{opacity:0;transform:translateX(-36px);transition:opacity .75s ease,transform .75s ease;}
+.rv-l.in{opacity:1;transform:none;}
+.rv-r{opacity:0;transform:translateX(36px);transition:opacity .75s ease,transform .75s ease;}
+.rv-r.in{opacity:1;transform:none;}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.d4{transition-delay:.32s}.d5{transition-delay:.4s}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   GLASS CARD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.g{
+  background:var(--glass);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid var(--rim);
+  border-radius:clamp(14px,2.5vw,24px);
+  position:relative;overflow:hidden;
+}
+.g::before{
+  content:'';position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(135deg,rgba(255,255,255,.05) 0%,transparent 55%);
+  pointer-events:none;
+}
+.g-h{transition:transform .3s,box-shadow .3s,border-color .3s;}
+.g-h:hover{transform:translateY(-5px) scale(1.01);border-color:rgba(93,79,255,.28);box-shadow:0 24px 56px rgba(0,0,0,.4),0 0 0 1px rgba(93,79,255,.12),inset 0 1px 0 rgba(255,255,255,.07);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TYPOGRAPHY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.t-xl{font-family:var(--f-head);font-weight:900;line-height:.95;letter-spacing:-.05em;font-size:clamp(3rem,10vw,7.5rem);}
+.t-lg{font-family:var(--f-head);font-weight:900;line-height:1;letter-spacing:-.04em;font-size:clamp(2.2rem,6vw,4.5rem);}
+.t-md{font-family:var(--f-head);font-weight:800;line-height:1.1;letter-spacing:-.03em;font-size:clamp(1.4rem,3.5vw,2.2rem);}
+.t-sm{font-size:clamp(.85rem,1.8vw,1rem);color:var(--w2);line-height:1.75;}
+.grad{background:linear-gradient(135deg,var(--a) 0%,var(--b) 50%,var(--c) 100%);background-clip:text;-webkit-background-clip:text;color:transparent;background-size:300% 300%;animation:lg 5s ease infinite;}
+.mono{font-family:var(--f-mono);}
+.tag{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:var(--f-mono);font-size:clamp(.62rem,1.3vw,.72rem);letter-spacing:.1em;
+  color:var(--a);background:rgba(93,79,255,.1);border:1px solid rgba(93,79,255,.22);
+  padding:5px 12px;border-radius:100px;
+}
+.tag .dot{width:5px;height:5px;background:var(--d);border-radius:50%;animation:bp 1.8s ease infinite;}
+@keyframes bp{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   BUTTONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:clamp(12px,2vw,15px) clamp(20px,3vw,28px);
+  border-radius:100px;font-weight:700;
+  font-size:clamp(.82rem,1.6vw,.95rem);
+  font-family:var(--f-head);cursor:none;
+  text-decoration:none;border:none;outline:none;
+  transition:all .3s;position:relative;overflow:hidden;
+}
+.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.1);opacity:0;transition:.3s;border-radius:inherit;}
+.btn:hover::after{opacity:1;}
+.btn-p{background:linear-gradient(135deg,var(--a),var(--c));color:#fff;box-shadow:0 8px 24px var(--a-glow);}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 16px 36px var(--a-glow);}
+.btn-g{background:var(--glass);color:var(--w1);border:1px solid var(--rim);backdrop-filter:blur(8px);}
+.btn-g:hover{border-color:rgba(93,79,255,.4);transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.35);}
+.btn-c{background:linear-gradient(135deg,#0a8c6e,var(--d));color:#000;font-weight:800;box-shadow:0 8px 24px rgba(11,255,178,.25);}
+.btn-c:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(11,255,178,.35);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SECTION BASE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+section{padding:clamp(72px,10vw,120px) 0;position:relative;}
+.s-head{text-align:center;margin-bottom:clamp(40px,7vw,72px);}
+.s-head .tag{margin-bottom:16px;}
+.s-sub{color:var(--w3);font-family:var(--f-mono);font-size:clamp(.65rem,1.4vw,.78rem);letter-spacing:.08em;margin-top:10px;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HERO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#hero{min-height:100svh;min-height:100vh;display:flex;align-items:center;padding-top:clamp(80px,12vw,100px);}
+.hero-inner{
+  display:grid;
+  grid-template-columns:1fr clamp(240px,35vw,420px);
+  gap:clamp(40px,6vw,80px);
+  align-items:center;
+}
+.hero-badge{margin-bottom:clamp(20px,3vw,28px);}
+.hero-h1{margin-bottom:clamp(20px,3vw,28px);}
+.hero-h1 .line2{
+  display:block;
+  font-style:italic;
+  background:linear-gradient(125deg,var(--b) 0%,var(--a) 60%,var(--c) 100%);
+  background-clip:text;-webkit-background-clip:text;color:transparent;
+  background-size:300%;animation:lg 4s ease infinite;
+}
+.hero-h1 .line3{
+  display:block;
+  color:var(--w3);font-size:.45em;font-weight:400;
+  letter-spacing:.0em;margin-top:8px;
+  font-family:var(--f-mono);
+}
+.hero-tw{
+  font-family:var(--f-mono);font-size:clamp(.78rem,1.6vw,.95rem);
+  color:var(--b);border-right:2px solid var(--b);padding-right:3px;
+  animation:bc .75s step-end infinite;display:inline;
+}
+@keyframes bc{50%{border-color:transparent}}
+.hero-desc{
+  color:var(--w2);line-height:1.8;margin:clamp(16px,3vw,24px) 0 clamp(28px,5vw,40px);
+  font-size:clamp(.9rem,1.8vw,1.05rem);max-width:480px;
+}
+.hero-btns{display:flex;gap:clamp(10px,2vw,14px);flex-wrap:wrap;margin-bottom:clamp(32px,5vw,48px);}
+.hero-socials{display:flex;gap:clamp(8px,1.5vw,10px);flex-wrap:wrap;}
+.s-icon{
+  width:clamp(38px,7vw,44px);height:clamp(38px,7vw,44px);
+  background:var(--glass);border:1px solid var(--rim);border-radius:clamp(10px,2vw,13px);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--w2);font-size:clamp(1rem,2vw,1.15rem);
+  text-decoration:none;transition:all .3s;
+}
+.s-icon:hover{background:rgba(93,79,255,.18);border-color:rgba(93,79,255,.4);color:var(--a);transform:translateY(-4px);box-shadow:0 8px 20px rgba(93,79,255,.3);}
+
+/* Profile card */
+.profile-wrap{perspective:1200px;}
+.profile-card{
+  position:relative;transform-style:preserve-3d;
+  transition:transform .12s ease;
+}
+.profile-frame{
+  position:relative;border-radius:clamp(20px,4vw,32px);overflow:visible;
+}
+.profile-frame::before{
+  content:'';position:absolute;inset:-2px;border-radius:inherit;
+  background:conic-gradient(from 0deg,var(--a),var(--b),var(--c),var(--a));
+  animation:spin 5s linear infinite;z-index:-1;
+  border-radius:clamp(20px,4vw,32px);
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.profile-inner{
+  overflow:hidden;border-radius:calc(clamp(20px,4vw,32px) - 2px);
+  aspect-ratio:3/4;background:var(--ink2);
+  position:relative;
+}
+.profile-inner img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;
+  display:block;
+}
+.profile-inner .p-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(4,2,14,.95) 0%, rgba(4,2,14,.2) 40%, transparent 70%);
+}
+/* Floating badges on profile */
+.p-badge{
+  position:absolute;
+  background:rgba(6,4,22,.85);border:1px solid var(--rim);backdrop-filter:blur(14px);
+  padding:clamp(7px,1.5vw,9px) clamp(12px,2vw,16px);border-radius:100px;
+  font-family:var(--f-mono);font-size:clamp(.62rem,1.2vw,.7rem);
+  white-space:nowrap;display:flex;align-items:center;gap:6px;
+  box-shadow:0 8px 28px rgba(0,0,0,.6);z-index:10;
+  animation:fl 4s ease-in-out infinite;
+}
+.p-b1{top:-14px;left:50%;transform:translateX(-50%);}
+.p-b2{bottom:20%;left:-clamp(50px,10vw,70px);animation-delay:-1.8s;}
+.p-b3{bottom:8%;right:-clamp(40px,8vw,55px);animation-delay:-3.3s;}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.p-b1{animation:flc 4s ease-in-out infinite;}
+@keyframes flc{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-9px)}}
+.p-dot{width:6px;height:6px;border-radius:50%;background:var(--d);animation:bp 2s ease infinite;}
+
+/* Hero scroll cue */
+.hero-scroll{
+  position:absolute;bottom:clamp(20px,4vw,36px);left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;opacity:.45;
+}
+.h-mouse{width:20px;height:30px;border:1.5px solid var(--w3);border-radius:10px;position:relative;}
+.h-wheel{position:absolute;top:4px;left:50%;transform:translateX(-50%);width:2.5px;height:6px;background:var(--a);border-radius:3px;animation:sw 2s ease infinite;}
+@keyframes sw{0%{top:4px;opacity:1}100%{top:16px;opacity:0}}
+.h-stxt{font-family:var(--f-mono);font-size:.58rem;color:var(--w3);letter-spacing:.12em;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MARQUEE STRIP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.marquee-strip{
+  padding:clamp(14px,2.5vw,18px) 0;
+  border-top:1px solid var(--rim);border-bottom:1px solid var(--rim);
+  overflow:hidden;
+  background:linear-gradient(90deg,rgba(93,79,255,.06) 0%,rgba(0,229,255,.04) 50%,rgba(255,45,120,.06) 100%);
+}
+.mq-inner{display:flex;gap:clamp(24px,4vw,36px);width:max-content;animation:mq 18s linear infinite;}
+.mq-inner:hover{animation-play-state:paused;}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-item{
+  display:flex;align-items:center;gap:clamp(8px,1.5vw,12px);
+  font-family:var(--f-mono);font-size:clamp(.7rem,1.4vw,.82rem);
+  color:var(--w3);white-space:nowrap;letter-spacing:.05em;
+}
+.mq-item i{font-size:clamp(.9rem,1.8vw,1.1rem);}
+.mq-item.hi{color:var(--b);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ABOUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#about{background:linear-gradient(to bottom,transparent,rgba(93,79,255,.03),transparent);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,64px);align-items:center;}
+.about-lead{font-size:clamp(1.1rem,2.5vw,1.35rem);color:var(--w1);line-height:1.65;font-weight:400;margin:clamp(16px,3vw,22px) 0;}
+.about-quote{
+  border-left:3px solid var(--a);padding-left:clamp(16px,3vw,22px);
+  font-style:italic;color:var(--w2);line-height:1.7;
+  font-size:clamp(.9rem,1.8vw,1.05rem);margin:clamp(18px,3vw,24px) 0;
+}
+.about-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+.achip{
+  font-family:var(--f-mono);font-size:clamp(.62rem,1.3vw,.72rem);
+  color:var(--b);background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.18);
+  padding:5px 12px;border-radius:100px;
+}
+.stat-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,16px);}
+.stat-g .gc{padding:clamp(20px,3vw,28px);text-align:center;}
+.gc .n{
+  font-family:var(--f-head);font-weight:900;font-size:clamp(2.2rem,5vw,3.2rem);
+  letter-spacing:-.04em;
+  background:linear-gradient(135deg,var(--w1),var(--w2));
+  background-clip:text;-webkit-background-clip:text;color:transparent;
+}
+.gc .l{font-family:var(--f-mono);font-size:clamp(.62rem,1.3vw,.72rem);color:var(--w3);margin-top:4px;}
+.gc.span2{grid-column:span 2;display:flex;align-items:center;justify-content:space-between;text-align:left;padding:clamp(16px,2.5vw,22px) clamp(20px,3vw,28px);}
+.gc.span2 .rhs{font-size:clamp(1.4rem,3vw,1.8rem);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   BELIEFS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#beliefs{background:radial-gradient(ellipse 80% 40% at 50% 50%,rgba(93,79,255,.06) 0%,transparent 70%);}
+.beliefs-list{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2.5vw,20px);
+}
+.belief-card{
+  padding:clamp(22px,4vw,32px);display:flex;align-items:flex-start;gap:clamp(14px,2.5vw,18px);
+  cursor:default;
+}
+.belief-card:hover .b-num{color:var(--b);}
+.b-num{
+  font-family:var(--f-mono);font-size:clamp(.68rem,1.3vw,.78rem);
+  color:var(--w4);flex-shrink:0;margin-top:3px;
+}
+.b-text{font-size:clamp(.95rem,2vw,1.1rem);font-weight:600;line-height:1.55;color:var(--w1);}
+.b-sub{font-size:clamp(.78rem,1.5vw,.88rem);color:var(--w3);margin-top:5px;line-height:1.6;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SKILLS (floating capsules style)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#skills{background:linear-gradient(to bottom,transparent,rgba(0,229,255,.02),transparent);}
+.skills-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,24px);}
+.sk-col{padding:clamp(22px,4vw,30px);}
+.sk-col h3{font-size:clamp(.9rem,1.8vw,1.05rem);font-weight:700;margin-bottom:clamp(14px,2.5vw,18px);}
+.sk-col h3 i{margin-right:8px;opacity:.8;}
+.capsules{display:flex;flex-wrap:wrap;gap:7px;}
+.cap{
+  font-family:var(--f-mono);font-size:clamp(.62rem,1.2vw,.72rem);
+  color:var(--w2);background:rgba(255,255,255,.05);border:1px solid var(--rim);
+  padding:5px 11px;border-radius:6px;
+  transition:all .22s;cursor:default;
+}
+.cap:hover{background:rgba(93,79,255,.14);border-color:rgba(93,79,255,.32);color:var(--a);}
+
+/* AI Skills orbital viz */
+.ai-orbit{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2.5vw,16px);
+  margin-top:clamp(32px,5vw,48px);
+}
+.ai-node{
+  padding:clamp(18px,3.5vw,26px) clamp(14px,3vw,20px);
+  text-align:center;cursor:default;
+}
+.ai-node:hover .ai-ico{transform:scale(1.15) rotate(6deg);box-shadow:0 0 24px var(--a-glow);}
+.ai-ico{
+  width:clamp(48px,9vw,60px);height:clamp(48px,9vw,60px);
+  border-radius:clamp(12px,2.5vw,16px);margin:0 auto clamp(12px,2vw,16px);
+  background:linear-gradient(135deg,rgba(93,79,255,.18),rgba(255,45,120,.12));
+  border:1px solid rgba(93,79,255,.22);
+  display:flex;align-items:center;justify-content:center;
+  font-size:clamp(1.2rem,2.5vw,1.5rem);
+  transition:all .3s;
+}
+.ai-node h4{font-family:var(--f-head);font-weight:700;font-size:clamp(.8rem,1.6vw,.9rem);margin-bottom:5px;}
+.ai-node p{font-size:clamp(.65rem,1.3vw,.75rem);color:var(--w3);font-family:var(--f-mono);}
+.ai-bar{height:3px;background:var(--w4);border-radius:9px;margin-top:clamp(8px,1.5vw,10px);overflow:hidden;}
+.ai-fill{height:100%;background:linear-gradient(90deg,var(--a),var(--b));width:0;transition:width 1.4s ease;box-shadow:0 0 8px var(--b-glow);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PROJECTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#projects{background:linear-gradient(to bottom,transparent,rgba(255,45,120,.02),transparent);}
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2.5vw,20px);}
+.pcard{
+  padding:clamp(22px,4vw,32px);position:relative;overflow:hidden;
+  cursor:pointer;display:block;text-decoration:none;color:inherit;
+  -webkit-tap-highlight-color:transparent;
+  transform-style:preserve-3d;
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+}
+.pcard:hover{transform:translateY(-6px) scale(1.015);border-color:rgba(93,79,255,.3);box-shadow:0 28px 60px rgba(0,0,0,.45),0 0 0 1px rgba(93,79,255,.14);}
+.pcard.featured{grid-column:span 2;background:linear-gradient(135deg,rgba(93,79,255,.09) 0%,rgba(0,229,255,.05) 100%);}
+.pcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:clamp(12px,2vw,16px);}
+.pico{
+  width:clamp(44px,8vw,54px);height:clamp(44px,8vw,54px);
+  border-radius:clamp(12px,2.5vw,15px);
+  display:flex;align-items:center;justify-content:center;
+  font-size:clamp(1.2rem,2.5vw,1.5rem);
+}
+.pi-g{background:rgba(11,255,178,.1);color:var(--d);}
+.pi-b{background:rgba(59,130,246,.1);color:#60a5fa;}
+.pi-p{background:rgba(255,45,120,.1);color:var(--c);}
+.pi-c{background:rgba(0,229,255,.1);color:var(--b);}
+.pbadge{
+  font-family:var(--f-mono);font-size:clamp(.6rem,1.2vw,.67rem);
+  padding:4px 10px;border-radius:100px;border:1px solid;
+}
+.pb-f{color:var(--d);border-color:rgba(11,255,178,.3);background:rgba(11,255,178,.08);}
+.pb-l{color:var(--b);border-color:rgba(0,229,255,.3);background:rgba(0,229,255,.08);}
+.pb-w{color:var(--c);border-color:rgba(255,45,120,.3);background:rgba(255,45,120,.08);}
+.pcard h3{font-family:var(--f-head);font-weight:800;font-size:clamp(1.1rem,2.5vw,1.4rem);margin-bottom:7px;letter-spacing:-.02em;}
+.pcard.featured h3{font-size:clamp(1.3rem,3vw,1.7rem);}
+.pcard p{font-size:clamp(.82rem,1.6vw,.92rem);color:var(--w2);line-height:1.7;margin-bottom:clamp(12px,2vw,16px);}
+.ptechs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:clamp(14px,2.5vw,18px);}
+.pt{font-family:var(--f-mono);font-size:clamp(.6rem,1.2vw,.68rem);padding:4px 10px;border-radius:5px;background:rgba(255,255,255,.06);border:1px solid var(--rim);color:var(--w2);}
+.plink{display:inline-flex;align-items:center;gap:6px;font-size:clamp(.78rem,1.5vw,.88rem);font-weight:700;color:var(--a);transition:gap .2s,color .2s;}
+.plink i{font-size:.75em;}
+.pcard:hover .plink{gap:10px;color:var(--b);}
+.pfeats{display:flex;flex-wrap:wrap;gap:clamp(10px,2vw,16px);margin-bottom:clamp(12px,2vw,16px);}
+.pfeat{display:flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:clamp(.63rem,1.3vw,.73rem);color:var(--b);}
+/* Shine sweep on card hover */
+.pcard::after{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent);
+  transition:left .6s ease;pointer-events:none;
+}
+.pcard:hover::after{left:150%;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PROCESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#process{background:linear-gradient(to bottom,transparent,rgba(6,4,18,.7),transparent);}
+.proc-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,2vw,16px);position:relative;}
+.proc-steps::before{
+  content:'';position:absolute;top:30px;left:8%;width:84%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--a),var(--b),var(--c),transparent);z-index:0;
+}
+.pstep{position:relative;z-index:1;padding:clamp(18px,3.5vw,24px) clamp(12px,2vw,16px);text-align:center;}
+.pstep-n{
+  width:clamp(32px,6vw,40px);height:clamp(32px,6vw,40px);border-radius:50%;
+  background:linear-gradient(135deg,var(--a),var(--c));
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-mono);font-size:clamp(.65rem,1.3vw,.75rem);font-weight:700;
+  margin:0 auto clamp(12px,2vw,16px);box-shadow:0 0 18px var(--a-glow);
+}
+.pstep h4{font-family:var(--f-head);font-weight:700;font-size:clamp(.82rem,1.6vw,.9rem);margin-bottom:5px;}
+.pstep p{font-size:clamp(.65rem,1.3vw,.75rem);color:var(--w3);}
+.pstep i{font-size:clamp(1.1rem,2vw,1.4rem);display:block;margin-bottom:clamp(8px,1.5vw,12px);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   EXPERIENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#experience{background:linear-gradient(to bottom,transparent,rgba(255,45,120,.025),transparent);}
+.tl{position:relative;padding-left:clamp(32px,6vw,48px);}
+.tl::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--a),var(--c),transparent);}
+.tl-item{position:relative;margin-bottom:clamp(28px,5vw,44px);}
+.tl-dot{position:absolute;left:calc(-1 * clamp(32px,6vw,48px) + 4px);top:5px;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));border:2px solid var(--ink);box-shadow:0 0 14px var(--a-glow);}
+.tl-date{font-family:var(--f-mono);font-size:clamp(.62rem,1.3vw,.72rem);color:var(--a);margin-bottom:7px;}
+.tl-card{padding:clamp(20px,3.5vw,28px);}
+.tl-card h3{font-family:var(--f-head);font-weight:800;font-size:clamp(1.05rem,2.2vw,1.25rem);margin-bottom:3px;}
+.tl-org{font-family:var(--f-mono);font-size:clamp(.65rem,1.3vw,.75rem);color:var(--w3);margin-bottom:clamp(8px,1.5vw,12px);}
+.tl-card p{font-size:clamp(.82rem,1.6vw,.92rem);color:var(--w2);line-height:1.7;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TECH STACK SCROLL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#techstack{overflow:hidden;background:radial-gradient(ellipse 70% 40% at 50% 100%,rgba(0,229,255,.04) 0%,transparent 70%);}
+.tk-wrap{overflow:hidden;position:relative;margin-bottom:14px;}
+.tk-wrap::before,.tk-wrap::after{content:'';position:absolute;top:0;bottom:0;width:clamp(60px,12vw,120px);z-index:10;pointer-events:none;}
+.tk-wrap::before{left:0;background:linear-gradient(to right,var(--ink),transparent);}
+.tk-wrap::after{right:0;background:linear-gradient(to left,var(--ink),transparent);}
+.tk-row{display:flex;gap:clamp(10px,2vw,14px);width:max-content;}
+.tk-row.sl{animation:sl 22s linear infinite;}
+.tk-row.sr{animation:sr 22s linear infinite;}
+@keyframes sl{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes sr{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.tk-chip{
+  display:flex;align-items:center;gap:clamp(7px,1.5vw,10px);
+  padding:clamp(10px,2vw,13px) clamp(14px,2.5vw,18px);
+  background:var(--glass);border:1px solid var(--rim);border-radius:100px;
+  font-family:var(--f-mono);font-size:clamp(.68rem,1.3vw,.78rem);color:var(--w2);
+  white-space:nowrap;transition:all .25s;
+}
+.tk-chip:hover{border-color:rgba(93,79,255,.3);color:var(--w1);}
+.tk-chip .e{font-size:clamp(.9rem,1.8vw,1.1rem);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CURRENTLY BUILDING / OBSESSIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#now{background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(93,79,255,.07) 0%,transparent 70%);}
+.now-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.5vw,20px);}
+.now-card{padding:clamp(22px,4vw,30px);}
+.now-icon{font-size:clamp(1.5rem,3vw,1.9rem);margin-bottom:clamp(14px,2.5vw,18px);}
+.now-card h3{font-family:var(--f-head);font-weight:800;font-size:clamp(.95rem,2vw,1.15rem);margin-bottom:7px;}
+.now-card p{font-size:clamp(.8rem,1.6vw,.9rem);color:var(--w2);line-height:1.7;}
+.now-live{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--f-mono);font-size:clamp(.6rem,1.2vw,.7rem);
+  color:var(--d);margin-top:12px;
+}
+.now-live::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--d);animation:bp 1.5s ease infinite;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TESTIMONIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#testimonials{background:linear-gradient(to bottom,transparent,rgba(93,79,255,.03),transparent);}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.5vw,20px);}
+.tcard{padding:clamp(22px,4vw,30px);}
+.tstars{color:#f59e0b;font-size:clamp(.75rem,1.5vw,.85rem);margin-bottom:clamp(12px,2vw,16px);}
+.ttxt{font-size:clamp(.82rem,1.7vw,.92rem);color:var(--w2);line-height:1.8;font-style:italic;margin-bottom:clamp(16px,3vw,20px);}
+.tauthor{display:flex;align-items:center;gap:clamp(9px,1.8vw,12px);}
+.tav{width:clamp(34px,6vw,40px);height:clamp(34px,6vw,40px);border-radius:50%;background:linear-gradient(135deg,var(--a),var(--c));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:clamp(.85rem,1.7vw,.95rem);}
+.tan{font-weight:700;font-size:clamp(.82rem,1.6vw,.88rem);}
+.tar{font-family:var(--f-mono);font-size:clamp(.6rem,1.2vw,.7rem);color:var(--w3);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CERTIFICATES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#certificates{background:linear-gradient(to bottom,transparent,rgba(0,229,255,.02),transparent);}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.5vw,20px);}
+.certc{overflow:hidden;}
+.cert-pre{
+  aspect-ratio:16/9;background:linear-gradient(135deg,rgba(93,79,255,.1),rgba(0,229,255,.05));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border-bottom:1px solid var(--rim);position:relative;overflow:hidden;
+}
+.cert-pre::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(93,79,255,.14) 0%,transparent 70%);}
+.cert-pre i{font-size:clamp(1.8rem,4vw,2.4rem);opacity:.45;position:relative;z-index:1;}
+.cert-pre span{font-family:var(--f-mono);font-size:clamp(.58rem,1.2vw,.65rem);color:var(--w3);margin-top:7px;position:relative;z-index:1;}
+.cert-body{padding:clamp(16px,3vw,20px);}
+.cert-body h3{font-family:var(--f-head);font-weight:700;font-size:clamp(.9rem,1.8vw,1rem);margin-bottom:3px;}
+.cert-body p{font-family:var(--f-mono);font-size:clamp(.6rem,1.2vw,.7rem);color:var(--w3);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CONTACT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#contact{background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(93,79,255,.09) 0%,transparent 70%);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,72px);align-items:start;}
+.contact-channels{display:flex;flex-direction:column;gap:clamp(10px,2vw,12px);}
+.cch{
+  display:flex;align-items:center;gap:clamp(12px,2.5vw,16px);
+  padding:clamp(14px,2.5vw,18px) clamp(16px,3vw,20px);
+  text-decoration:none;color:var(--w1);
+  transition:all .3s;
+}
+.cch:hover{border-color:rgba(93,79,255,.4) !important;background:rgba(93,79,255,.08) !important;transform:translateX(6px);}
+.cch-ico{
+  width:clamp(38px,7vw,44px);height:clamp(38px,7vw,44px);
+  border-radius:clamp(10px,2vw,12px);
+  display:flex;align-items:center;justify-content:center;
+  font-size:clamp(1.1rem,2vw,1.25rem);flex-shrink:0;
+}
+.ci-em{background:rgba(93,79,255,.14);color:var(--a);}
+.ci-wa{background:rgba(37,211,102,.14);color:#25d366;}
+.ci-ig{background:rgba(255,45,120,.14);color:var(--c);}
+.ci-gh{background:rgba(255,255,255,.08);color:var(--w1);}
+.ci-li{background:rgba(10,102,194,.14);color:#0a66c2;}
+.cch-lbl{font-weight:700;font-size:clamp(.85rem,1.7vw,.92rem);}
+.cch-val{font-family:var(--f-mono);font-size:clamp(.62rem,1.3vw,.72rem);color:var(--w3);}
+.cch-arr{margin-left:auto;opacity:.35;font-size:1.1rem;}
+
+/* Form */
+.cf{display:flex;flex-direction:column;gap:clamp(12px,2vw,16px);}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,2vw,14px);}
+.fg{display:flex;flex-direction:column;gap:7px;}
+.fg label{font-family:var(--f-mono);font-size:clamp(.6rem,1.2vw,.7rem);color:var(--w3);letter-spacing:.06em;}
+.fg input,.fg textarea{
+  background:var(--glass);border:1px solid var(--rim);
+  border-radius:clamp(10px,2vw,12px);padding:clamp(11px,2vw,14px) clamp(13px,2.5vw,16px);
+  color:var(--w1);font-family:var(--f-head);font-size:clamp(.85rem,1.7vw,.9rem);
+  outline:none;resize:none;
+  transition:border-color .3s,box-shadow .3s;
+}
+.fg input:focus,.fg textarea:focus{border-color:rgba(93,79,255,.5);box-shadow:0 0 0 3px rgba(93,79,255,.1);}
+.fg textarea{min-height:clamp(110px,18vw,130px);}
+input::placeholder,textarea::placeholder{color:var(--w4);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+footer{border-top:1px solid var(--rim);padding:clamp(28px,5vw,44px) 0;}
+.ft{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:clamp(16px,3vw,20px);}
+.ft-logo{font-family:var(--f-head);font-weight:900;font-size:clamp(1rem,2vw,1.15rem);letter-spacing:-.03em;text-decoration:none;color:var(--w1);}
+.ft-logo em{font-style:normal;color:var(--b);}
+.ft-links{display:flex;gap:clamp(16px,3vw,24px);flex-wrap:wrap;}
+.ft-links a{font-size:clamp(.72rem,1.4vw,.8rem);color:var(--w3);text-decoration:none;transition:color .2s;}
+.ft-links a:hover{color:var(--w1);}
+.ft-copy{font-family:var(--f-mono);font-size:clamp(.6rem,1.2vw,.72rem);color:var(--w4);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESPONSIVE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;text-align:center;}
+  .hero-btns{justify-content:center;}
+  .hero-socials{justify-content:center;}
+  .hero-desc{margin-left:auto;margin-right:auto;}
+  .profile-wrap{max-width:clamp(220px,55vw,320px);margin:0 auto;}
+  .p-b2,.p-b3{display:none;}
+  .about-grid{grid-template-columns:1fr;}
+  .beliefs-list{grid-template-columns:1fr;}
+  .skills-cols{grid-template-columns:1fr 1fr;}
+  .ai-orbit{grid-template-columns:repeat(2,1fr);}
+  .proj-grid{grid-template-columns:1fr;}
+  .pcard.featured{grid-column:span 1;}
+  .proc-steps{grid-template-columns:repeat(3,1fr);}
+  .proc-steps::before{display:none;}
+  .test-grid{grid-template-columns:1fr 1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .cert-grid{grid-template-columns:1fr 1fr;}
+  .now-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  .nav-links{display:none;}
+  .nav-ham{display:block;}
+  .skills-cols{grid-template-columns:1fr;}
+  .ai-orbit{grid-template-columns:repeat(2,1fr);}
+  .cf-row{grid-template-columns:1fr;}
+  .test-grid{grid-template-columns:1fr;}
+  .cert-grid{grid-template-columns:1fr;}
+  .now-grid{grid-template-columns:1fr;}
+  .proc-steps{grid-template-columns:repeat(2,1fr);}
+  #c-dot,#c-ring{display:none;}
+  body{cursor:auto;}
+  .beliefs-list{grid-template-columns:1fr;}
+  .ft{flex-direction:column;text-align:center;}
+  .stat-g .gc.span2{flex-direction:column;text-align:center;gap:8px;}
+}
+@media(max-width:380px){
+  .t-xl{font-size:2.6rem;}
+  .hero-btns{flex-direction:column;}
+  .hero-btns .btn{width:100%;justify-content:center;}
+  .proc-steps{grid-template-columns:1fr 1fr;}
+  .ai-orbit{grid-template-columns:1fr 1fr;}
+}
+/* Tap / touch active state for cards on mobile */
+@media(hover:none){
+  .pcard:active{transform:scale(0.98);}
+  .g-h:active{transform:scale(0.98);}
+  .btn:active{transform:scale(0.97);}
+}
+</style>
 </head>
-<body class="bg-dark text-white overflow-x-hidden font-sans selection:bg-primary selection:text-white">
+<body>
 
-    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob"></div>
-        <div class="absolute top-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-accent/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-        <div class="absolute inset-0 bg-grid z-[1]"></div>
+<!-- Cursor -->
+<div id="c-dot"></div>
+<div id="c-ring"></div>
+
+<!-- Loader -->
+<div id="loader">
+  <!-- CHANGE HERE: Loader name -->
+  <div class="l-logo">ayush.dev</div>
+  <div class="l-track"><div class="l-fill"></div></div>
+  <div class="l-msg">BOOTING CREATIVE LAB...</div>
+</div>
+
+<!-- Background -->
+<canvas id="bg-c"></canvas>
+<div id="spotlight"></div>
+<div class="noise"></div>
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+<div class="orb o3"></div>
+<div id="sprogress"></div>
+
+<div class="wrap">
+
+<!-- ════════════════════ NAV ════════════════════ -->
+<nav id="nav">
+  <!-- CHANGE HERE: logo -->
+  <a href="#hero" class="nav-logo">ayush<em>.dev</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#now">Now</a></li>
+    <li><a href="#contact" class="nav-cta-link">Hire Me →</a></li>
+  </ul>
+  <button class="nav-ham" id="nav-ham" aria-label="Open menu"><i class="ri-menu-4-line"></i></button>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="m-menu">
+  <button class="m-close" id="m-close"><i class="ri-close-line"></i></button>
+  <a href="#about" class="mlink">about</a>
+  <a href="#skills" class="mlink">skills</a>
+  <a href="#projects" class="mlink">work</a>
+  <a href="#now" class="mlink">now</a>
+  <a href="#beliefs" class="mlink">beliefs</a>
+  <a href="#contact" class="mlink" style="color:var(--a)">hire me</a>
+</div>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section id="hero">
+  <div class="ctr">
+    <div class="hero-inner">
+      <!-- Left -->
+      <div class="hero-text">
+        <div class="hero-badge rv">
+          <span class="tag"><span class="dot"></span>Open to Work · India</span>
+        </div>
+        <!-- CHANGE HERE: Main headline -->
+        <h1 class="t-xl hero-h1 rv d1">
+          half creator<br>
+          <span class="line2">half chaos.</span>
+          <span class="line3">// building internet experiences people actually remember.</span>
+        </h1>
+        <div class="rv d2" style="margin-top:clamp(14px,3vw,20px);">
+          <span id="tw"></span>
+        </div>
+        <!-- CHANGE HERE: Hero sub-description -->
+        <p class="hero-desc rv d3">
+          I build things that feel alive — AI tools, fast products,
+          interactive experiences. Obsessed with design, motion, and the
+          intersection of code + creativity.
+        </p>
+        <div class="hero-btns rv d4">
+          <a href="#projects" class="btn btn-p">See My Work <i class="ri-arrow-right-up-line"></i></a>
+          <a href="#contact" class="btn btn-g">Let's Talk <i class="ri-chat-1-line"></i></a>
+        </div>
+        <div class="hero-socials rv d5">
+          <!-- CHANGE HERE: Social links -->
+          <a href="https://github.com/ayush-7985" target="_blank" class="s-icon" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+          <a href="https://linkedin.com/in/prabhakar-yadav-247686394" target="_blank" class="s-icon" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+          <a href="https://www.instagram.com/ayush__7985/?hl=en" target="_blank" class="s-icon" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="mailto:yprabhakar565@gmail.com" class="s-icon" aria-label="Email"><i class="ri-mail-line"></i></a>
+          <a href="https://twitter.com" target="_blank" class="s-icon" aria-label="X/Twitter"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+
+      <!-- Right: Profile -->
+      <div class="profile-wrap rv-r">
+        <div class="profile-card" id="pcard3d">
+          <div class="p-badge p-b1"><span class="p-dot"></span><span>Currently building →</span></div>
+          <div class="p-badge p-b2">🤖 AI-native dev</div>
+          <div class="p-badge p-b3">⚡ Full-stack</div>
+          <div class="profile-frame">
+            <div class="profile-inner">
+              <!-- CHANGE HERE: Profile photo URL -->
+              <img src="https://i.ibb.co/bMHm82kZ/6134024154613747621.jpg" alt="Ayush Yadav" loading="eager">
+              <div class="p-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Scroll cue -->
+  <div class="hero-scroll">
+    <div class="h-mouse"><div class="h-wheel"></div></div>
+    <span class="h-stxt">SCROLL</span>
+  </div>
+</section>
+
+<!-- ════════════════════ MARQUEE ════════════════════ -->
+<div class="marquee-strip">
+  <div class="mq-inner">
+    <!-- row duplicated for infinite -->
+    <span class="mq-item hi"><i class="ri-sparkling-2-fill"></i>AI-First Developer</span>
+    <span class="mq-item"><i class="ri-code-s-slash-line"></i>Full-Stack Builder</span>
+    <span class="mq-item hi"><i class="ri-rocket-2-line"></i>0 → 1 Products</span>
+    <span class="mq-item"><i class="ri-brain-line"></i>Prompt Engineer</span>
+    <span class="mq-item hi"><i class="ri-palette-line"></i>Design × Code</span>
+    <span class="mq-item"><i class="ri-lightning-fill"></i>Ship Fast. Think Deep.</span>
+    <span class="mq-item hi"><i class="ri-fingerprint-line"></i>Internet Native</span>
+    <span class="mq-item"><i class="ri-plant-line"></i>Build in Public</span>
+    <span class="mq-item hi"><i class="ri-sparkling-2-fill"></i>AI-First Developer</span>
+    <span class="mq-item"><i class="ri-code-s-slash-line"></i>Full-Stack Builder</span>
+    <span class="mq-item hi"><i class="ri-rocket-2-line"></i>0 → 1 Products</span>
+    <span class="mq-item"><i class="ri-brain-line"></i>Prompt Engineer</span>
+    <span class="mq-item hi"><i class="ri-palette-line"></i>Design × Code</span>
+    <span class="mq-item"><i class="ri-lightning-fill"></i>Ship Fast. Think Deep.</span>
+    <span class="mq-item hi"><i class="ri-fingerprint-line"></i>Internet Native</span>
+    <span class="mq-item"><i class="ri-plant-line"></i>Build in Public</span>
+  </div>
+</div>
+
+<!-- ════════════════════ ABOUT ════════════════════ -->
+<section id="about">
+  <div class="ctr">
+    <div class="about-grid">
+      <div>
+        <div class="tag rv" style="margin-bottom:16px;"><span class="dot"></span>who i am</div>
+        <!-- CHANGE HERE: About heading + copy -->
+        <h2 class="t-lg rv d1">not your<br><span class="grad">average dev.</span></h2>
+        <p class="about-lead rv d2">
+          I'm Ayush — a builder who learned that the best products live at
+          the intersection of beautiful design, sharp code, and genuine obsession.
+        </p>
+        <div class="about-quote rv d3">
+          "I don't want to build things that work. I want to build things people <em>feel</em>."
+        </div>
+        <p class="t-sm rv d4">
+          Based in India. 100% self-taught. Fuelled by curiosity,
+          late-night rabbit holes, and the belief that one person with the right tools
+          can build something that changes how people interact with the internet.
+        </p>
+        <div class="about-chips rv d5">
+          <span class="achip">⚡ 48h MVPs</span>
+          <span class="achip">🧠 AI-Augmented</span>
+          <span class="achip">🚀 Vibe Coding</span>
+          <span class="achip">🛠️ Deploy-first mindset</span>
+          <span class="achip">📡 Build in Public</span>
+        </div>
+      </div>
+      <div>
+        <div class="stat-g">
+          <div class="g gc rv d1"><div class="n">15+</div><div class="l">real projects shipped</div></div>
+          <div class="g gc rv d2"><div class="n">100%</div><div class="l">self-taught</div></div>
+          <div class="g gc rv d3"><div class="n">48h</div><div class="l">fastest MVP</div></div>
+          <div class="g gc rv d4"><div class="n">∞</div><div class="l">ideas cooking</div></div>
+          <div class="g gc span2 rv d5">
+            <div>
+              <div style="font-weight:800;font-size:clamp(.92rem,1.8vw,1rem);">Building in Public</div>
+              <div style="font-family:var(--f-mono);font-size:clamp(.6rem,1.2vw,.68rem);color:var(--w3);margin-top:3px;">#buildinpublic · GitHub → Vercel</div>
+            </div>
+            <span class="rhs">🔥</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ BELIEFS ════════════════════ -->
+<section id="beliefs">
+  <div class="ctr">
+    <div class="s-head">
+      <div class="tag rv" style="display:inline-flex;"><span class="dot"></span>principles</div>
+      <h2 class="t-lg rv d1">things i <span class="grad">believe in</span></h2>
+      <p class="s-sub rv d2">// the rules I build by</p>
+    </div>
+    <!-- CHANGE HERE: Beliefs -->
+    <div class="beliefs-list">
+      <div class="g g-h belief-card rv d1">
+        <span class="b-num">01</span>
+        <div><div class="b-text">Shipping beats perfecting.</div><div class="b-sub">A live product with rough edges teaches more than a perfect product stuck in your head.</div></div>
+      </div>
+      <div class="g g-h belief-card rv d2">
+        <span class="b-num">02</span>
+        <div><div class="b-text">Design is not decoration.</div><div class="b-sub">How something feels is as important as how it works. Motion, spacing, and color carry emotion.</div></div>
+      </div>
+      <div class="g g-h belief-card rv d3">
+        <span class="b-num">03</span>
+        <div><div class="b-text">AI is a co-pilot, not a replacement.</div><div class="b-sub">The builders who use AI creatively will define the next decade. I want to be one of them.</div></div>
+      </div>
+      <div class="g g-h belief-card rv d4">
+        <span class="b-num">04</span>
+        <div><div class="b-text">The internet is the greatest canvas.</div><div class="b-sub">Billions of people scroll past things every day. Building something that makes them stop? That's the game.</div></div>
+      </div>
+      <div class="g g-h belief-card rv d5">
+        <span class="b-num">05</span>
+        <div><div class="b-text">Taste is a skill.</div><div class="b-sub">Technical skills can be copied. Knowing what looks and feels right takes time to cultivate — and it's worth it.</div></div>
+      </div>
+      <div class="g g-h belief-card rv">
+        <span class="b-num">06</span>
+        <div><div class="b-text">Build for yourself first.</div><div class="b-sub">The best projects start as scratching your own itch. Genuine obsession shows in the final product.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ SKILLS ════════════════════ -->
+<section id="skills">
+  <div class="ctr">
+    <div class="s-head">
+      <div class="tag rv" style="display:inline-flex;"><span class="dot"></span>arsenal</div>
+      <h2 class="t-lg rv d1">tools I <span class="grad">actually use</span></h2>
+      <p class="s-sub rv d2">// no fluff, no checkbox filler</p>
+    </div>
+    <!-- Tech Skill Columns -->
+    <div class="skills-cols">
+      <!-- CHANGE HERE: Skill categories -->
+      <div class="g sk-col rv d1">
+        <h3><i class="ri-code-box-line" style="color:#60a5fa;"></i>Core Stack</h3>
+        <div class="capsules">
+          <span class="cap">React</span><span class="cap">Next.js</span>
+          <span class="cap">Node.js</span><span class="cap">TypeScript</span>
+          <span class="cap">Tailwind</span><span class="cap">Supabase</span>
+          <span class="cap">MongoDB</span><span class="cap">PostgreSQL</span>
+          <span class="cap">REST APIs</span><span class="cap">GraphQL</span>
+        </div>
+      </div>
+      <div class="g sk-col rv d2">
+        <h3><i class="ri-robot-2-line" style="color:var(--c);"></i>AI Tooling</h3>
+        <div class="capsules">
+          <span class="cap">OpenAI API</span><span class="cap">LangChain</span>
+          <span class="cap">RAG Systems</span><span class="cap">Claude API</span>
+          <span class="cap">Prompt Eng.</span><span class="cap">Vector DBs</span>
+          <span class="cap">Embeddings</span><span class="cap">Agents</span>
+        </div>
+      </div>
+      <div class="g sk-col rv d3">
+        <h3><i class="ri-tools-line" style="color:var(--d);"></i>Workflow</h3>
+        <div class="capsules">
+          <span class="cap">Cursor AI</span><span class="cap">Vercel</span>
+          <span class="cap">GitHub CI/CD</span><span class="cap">v0.dev</span>
+          <span class="cap">Docker</span><span class="cap">Figma</span>
+          <span class="cap">Three.js</span><span class="cap">GSAP</span>
+        </div>
+      </div>
     </div>
 
-    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="#home" class="flex items-center gap-3 group">
-                    <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary/50 group-hover:border-accent transition-colors">
-                        <img src="https://image2url.com/images/1762088304982-ad06a7f4-c767-471b-8440-0ad33f05de1c.png" alt="Ayush Logo" class="object-cover w-full h-full">
-                    </div>
-                    <span class="font-bold text-xl tracking-tight group-hover:text-primary transition-colors">Ayush<span class="text-primary">.dev</span></span>
-                </a>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-sm font-medium text-gray-300 hover:text-white hover:scale-105 transition-all">Home</a>
-                    <a href="#about" class="text-sm font-medium text-gray-300 hover:text-white hover:scale-105 transition-all">About</a>
-                    <a href="#skills" class="text-sm font-medium text-gray-300 hover:text-white hover:scale-105 transition-all">Skills</a>
-                    <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-white hover:scale-105 transition-all">Projects</a>
-                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold text-sm hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all transform hover:-translate-y-0.5">
-                        Let's Talk
-                    </a>
-                </div>
+    <!-- AI Skills Orbit Grid -->
+    <div class="ai-orbit" id="ai-orbit">
+      <!-- CHANGE HERE: AI skill names + levels -->
+      <div class="g ai-node rv d1" data-skill="92"><div class="ai-ico">🤖</div><h4>AI Integration</h4><p>OpenAI · Claude · Gemini</p><div class="ai-bar"><div class="ai-fill"></div></div></div>
+      <div class="g ai-node rv d2" data-skill="95"><div class="ai-ico">✍️</div><h4>Prompt Engineering</h4><p>Chain-of-thought · Few-shot</p><div class="ai-bar"><div class="ai-fill"></div></div></div>
+      <div class="g ai-node rv d3" data-skill="88"><div class="ai-ico">⚡</div><h4>AI Automation</h4><p>Zapier · n8n · Agents</p><div class="ai-bar"><div class="ai-fill"></div></div></div>
+      <div class="g ai-node rv d4" data-skill="90"><div class="ai-ico">🎨</div><h4>UI/UX Design</h4><p>Figma · Design Systems</p><div class="ai-bar"><div class="ai-fill"></div></div></div>
+      <div class="g ai-node rv d1" data-skill="87"><div class="ai-ico">💻</div><h4>Frontend Dev</h4><p>React · Next · Motion</p><div class="ai-bar"><div class="ai-fill"></div></div></div>
+      <div class="g ai-node rv d2" data-skill="82"><div class="ai-ico">🏷️</div><h4>Creative Branding</h4><p>Identity · Visual · Copy</p><div class="ai-bar"><div class="ai-fill"></div></div></div>
+      <div class="g ai-node rv d3" data-skill="78"><div class="ai-ico">📢</div><h4>Content Strategy</h4><p>SEO · Social · Funnels</p><div class="ai-bar"><div class="ai-fill"></div></div></div>
+      <div class="g ai-node rv d4" data-skill="86"><div class="ai-ico">🌊</div><h4>Web Animations</h4><p>Three.js · GSAP · CSS</p><div class="ai-bar"><div class="ai-fill"></div></div></div>
+    </div>
+  </div>
+</section>
 
-                <button class="md:hidden text-gray-300 hover:text-white" onclick="toggleMenu()">
-                    <i class="ri-menu-4-line text-2xl"></i>
-                </button>
-            </div>
+<!-- ════════════════════ PROJECTS ════════════════════ -->
+<section id="projects">
+  <div class="ctr">
+    <div class="s-head">
+      <div class="tag rv" style="display:inline-flex;"><span class="dot"></span>builds</div>
+      <h2 class="t-lg rv d1">things I <span class="grad">shipped</span></h2>
+      <p class="s-sub rv d2">// not tutorials. actual products.</p>
+    </div>
+    <div class="proj-grid">
+
+      <!-- CHANGE HERE: Featured project - click opens link -->
+      <a href="https://gigmate.in/" target="_blank" rel="noopener" class="g pcard featured rv">
+        <div class="pcard-top">
+          <div class="pico pi-g"><i class="ri-briefcase-4-line"></i></div>
+          <span class="pbadge pb-f">⭐ Featured</span>
         </div>
-
-        <div id="mobile-menu" class="fixed inset-0 bg-dark/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 md:hidden">
-            <button onclick="toggleMenu()" class="absolute top-6 right-6 text-white">
-                <i class="ri-close-line text-3xl"></i>
-            </button>
-            <a href="#home" onclick="toggleMenu()" class="text-2xl font-bold hover:text-primary transition-colors">Home</a>
-            <a href="#about" onclick="toggleMenu()" class="text-2xl font-bold hover:text-primary transition-colors">About</a>
-            <a href="#skills" onclick="toggleMenu()" class="text-2xl font-bold hover:text-primary transition-colors">Skills</a>
-            <a href="#projects" onclick="toggleMenu()" class="text-2xl font-bold hover:text-primary transition-colors">Projects</a>
-            <a href="#contact" onclick="toggleMenu()" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Contact Me</a>
+        <h3>Freelance Hub — Full-Stack Marketplace</h3>
+        <!-- CHANGE HERE: Project description - Google Sheets removed -->
+        <p>A complete freelancing marketplace with real-time listings, role-based access, and database-powered authentication. Built for speed and zero-cost ops — empowering freelancers to connect without the noise.</p>
+        <div class="pfeats">
+          <span class="pfeat"><i class="ri-database-2-line"></i> Auth + DB</span>
+          <span class="pfeat"><i class="ri-user-settings-line"></i> Role-based Access</span>
+          <span class="pfeat"><i class="ri-global-line"></i> Real-time</span>
         </div>
-    </nav>
-
-    <section id="home" class="relative min-h-screen flex items-center pt-20 px-4 z-10">
-        <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1" data-aos="fade-right" data-aos-duration="1000">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                    </span>
-                    Class 12 Innovator & Dev
-                </div>
-                
-                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
-                    I Build <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent text-glow">Digital Reality</span>
-                </h1>
-                
-                <p class="text-xl text-gray-400 mb-8 max-w-lg font-mono">
-                    Focus + Fun + Savage Honesty = <span class="text-white">Real Growth.</span> <br>
-                    Turning complex problems into clean code.
-                </p>
-
-                <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="px-8 py-4 rounded-full bg-white text-dark font-bold hover:bg-gray-200 transition-colors flex items-center gap-2">
-                        View Work <i class="ri-arrow-right-line"></i>
-                    </a>
-                    <a href="https://github.com/ayush-7985" target="_blank" class="px-8 py-4 rounded-full glass text-white font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
-                        <i class="ri-github-fill text-xl"></i> GitHub
-                    </a>
-                </div>
-                
-                <div class="mt-12 flex items-center gap-4 text-sm text-gray-500 font-mono">
-                    <span>Tech Stack:</span>
-                    <i class="ri-reactjs-line text-xl text-blue-400" title="React"></i>
-                    <i class="ri-javascript-fill text-xl text-yellow-400" title="JS"></i>
-                    <i class="ri-tailwind-css-fill text-xl text-cyan-400" title="Tailwind"></i>
-                    <i class="ri-google-fill text-xl text-green-400" title="Google APIs"></i>
-                </div>
-            </div>
-
-            <div class="order-1 md:order-2 flex justify-center relative" data-aos="fade-left" data-aos-duration="1000">
-                <div class="relative w-72 h-72 md:w-96 md:h-96">
-                    <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-full blur-3xl opacity-20 animate-pulse"></div>
-                    <div class="relative w-full h-full rounded-full border-2 border-white/10 glass flex items-center justify-center overflow-hidden animate-float p-2">
-                        <img src="https://image2url.com/images/1762088304982-ad06a7f4-c767-471b-8440-0ad33f05de1c.png" alt="Ayush Yadav" class="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
-                    </div>
-                    
-                    <div class="absolute -right-4 top-10 glass p-3 rounded-xl flex items-center gap-3 animate-float animation-delay-1000">
-                        <div class="bg-green-500/20 p-2 rounded-lg text-green-400"><i class="ri-code-s-slash-line"></i></div>
-                        <div>
-                            <p class="text-xs text-gray-400">Current Status</p>
-                            <p class="text-sm font-bold">Coding 24/7</p>
-                        </div>
-                    </div>
-                    
-                    <div class="absolute -left-4 bottom-10 glass p-3 rounded-xl flex items-center gap-3 animate-float animation-delay-2000">
-                        <div class="bg-primary/20 p-2 rounded-lg text-primary"><i class="ri-graduation-cap-line"></i></div>
-                        <div>
-                            <p class="text-xs text-gray-400">Education</p>
-                            <p class="text-sm font-bold">Class 12 CBSE</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="ptechs">
+          <span class="pt">Next.js</span><span class="pt">Supabase</span>
+          <span class="pt">PostgreSQL</span><span class="pt">Tailwind</span><span class="pt">Vercel</span>
         </div>
-    </section>
+        <span class="plink">Open Live Demo <i class="ri-external-link-line"></i></span>
+      </a>
 
-    <section id="about" class="py-24 px-4 relative z-10">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4"><span class="text-primary">About</span> The Developer</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
-                <div class="md:col-span-2 glass rounded-3xl p-8 card-hover" data-aos="fade-up" data-aos-delay="0">
-                    <div class="h-full flex flex-col justify-center">
-                        <div class="bg-primary/20 w-12 h-12 rounded-xl flex items-center justify-center text-primary mb-4">
-                            <i class="ri-user-star-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">The Mission</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            I'm not just studying for boards; I'm building creative digital solutions. From smart dashboards to sleek portfolio websites, I believe in the philosophy of <span class="text-white font-semibold">"Learn by Doing"</span>. Experiment, fail fast, and build again smarter.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="glass rounded-3xl p-8 card-hover bg-gradient-to-br from-primary/10 to-transparent" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-full flex flex-col justify-center text-center md:text-left">
-                        <h3 class="text-4xl font-bold text-white mb-2">100%</h3>
-                        <p class="text-sm text-gray-400 uppercase tracking-wider mb-6">Dedication</p>
-                        <h3 class="text-4xl font-bold text-white mb-2">0%</h3>
-                        <p class="text-sm text-gray-400 uppercase tracking-wider">Distractions</p>
-                    </div>
-                </div>
-
-                <div class="glass rounded-3xl p-8 card-hover" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="ri-flashlight-fill text-yellow-400 text-2xl"></i>
-                        <h3 class="text-xl font-bold">The Approach</h3>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Direct, focused, and brutally honest about growth. No shiny object syndrome. Just discipline and savage, Desi-style learning.
-                    </p>
-                </div>
-
-                <div class="md:col-span-2 glass rounded-3xl p-8 card-hover flex flex-col md:flex-row items-center gap-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-full md:w-1/3 text-center md:text-left">
-                        <h3 class="text-xl font-bold mb-2">Currently Cooking 👨‍🍳</h3>
-                        <span class="inline-block px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full border border-green-500/30">Active</span>
-                    </div>
-                    <div class="w-full md:w-2/3 border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 md:pl-6">
-                        <p class="text-gray-300">
-                            Balancing <strong class="text-white">Physics, Chemistry, Math & Biology</strong> with Full Stack Development. Study mode ON, Chill mode ready.
-                        </p>
-                    </div>
-                </div>
-            </div>
+      <!-- CHANGE HERE: Project 2 -->
+      <a href="https://ayush-7985.github.io/stocks-calculator/" target="_blank" rel="noopener" class="g pcard rv d1">
+        <div class="pcard-top">
+          <div class="pico pi-b"><i class="ri-stock-line"></i></div>
+          <span class="pbadge pb-l">Live</span>
         </div>
-    </section>
-
-    <section id="skills" class="py-24 px-4 relative z-10 bg-black/20">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16" data-aos="fade-right">
-                <div>
-                    <h2 class="text-3xl md:text-5xl font-bold mb-2">Technical <span class="text-secondary">Arsenal</span></h2>
-                    <p class="text-gray-400">Tools I use to bend the web to my will.</p>
-                </div>
-                <div class="hidden md:block w-32 h-1 bg-gray-800 rounded-full overflow-hidden">
-                    <div class="w-2/3 h-full bg-secondary"></div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="group relative glass p-6 rounded-2xl text-center transition-all hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
-                    <i class="ri-reactjs-line text-5xl text-blue-400 mb-4 block group-hover:scale-110 transition-transform"></i>
-                    <h3 class="font-bold text-lg">React.js</h3>
-                    <p class="text-xs text-gray-500 mt-2 font-mono">Frontend Magic</p>
-                </div>
-
-                <div class="group relative glass p-6 rounded-2xl text-center transition-all hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
-                    <i class="ri-html5-fill text-5xl text-orange-500 mb-4 block group-hover:scale-110 transition-transform"></i>
-                    <h3 class="font-bold text-lg">HTML & CSS</h3>
-                    <p class="text-xs text-gray-500 mt-2 font-mono">The Structure</p>
-                </div>
-
-                <div class="group relative glass p-6 rounded-2xl text-center transition-all hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
-                    <i class="ri-tailwind-css-fill text-5xl text-cyan-400 mb-4 block group-hover:scale-110 transition-transform"></i>
-                    <h3 class="font-bold text-lg">Tailwind UI</h3>
-                    <p class="text-xs text-gray-500 mt-2 font-mono">Rapid Styling</p>
-                </div>
-
-                <div class="group relative glass p-6 rounded-2xl text-center transition-all hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
-                    <i class="ri-node-tree text-5xl text-emerald-400 mb-4 block group-hover:scale-110 transition-transform"></i>
-                    <h3 class="font-bold text-lg">Node.js & APIs</h3>
-                    <p class="text-xs text-gray-500 mt-2 font-mono">Backend Power</p>
-                </div>
-                
-                <div class="group relative glass p-6 rounded-2xl text-center transition-all hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
-                    <i class="ri-robot-2-line text-5xl text-purple-400 mb-4 block group-hover:scale-110 transition-transform"></i>
-                    <h3 class="font-bold text-lg">AI Prompt Eng.</h3>
-                    <p class="text-xs text-gray-500 mt-2 font-mono">LLM Mastery</p>
-                </div>
-
-                <div class="group relative glass p-6 rounded-2xl text-center transition-all hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
-                    <i class="ri-sparkling-2-fill text-5xl text-pink-400 mb-4 block group-hover:scale-110 transition-transform"></i>
-                    <h3 class="font-bold text-lg">Vibe Coding</h3>
-                    <p class="text-xs text-gray-500 mt-2 font-mono">AI-Assisted Dev</p>
-                </div>
-
-                <div class="col-span-2 glass p-6 rounded-2xl flex flex-col justify-center" data-aos="zoom-in" data-aos-delay="600">
-                    <h3 class="font-bold text-lg mb-4">Also Exploring...</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs font-mono">Fullstack Dev</span>
-                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs font-mono">AI Agents</span>
-                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs font-mono">RAG Systems</span>
-                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs font-mono">Supabase</span>
-                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs font-mono">OpenAI API</span>
-                    </div>
-                </div>
-            </div>
+        <h3>Stocks Calculator</h3>
+        <p>Financial analytics without the bloat. Real-time stock math tool used by 200+ monthly investors. Fast, minimal, precise.</p>
+        <div class="ptechs">
+          <span class="pt">JavaScript</span><span class="pt">Tailwind</span><span class="pt">GitHub Pages</span>
         </div>
-    </section>
+        <span class="plink">Open Live <i class="ri-external-link-line"></i></span>
+      </a>
 
-    <section id="projects" class="py-24 px-4 relative z-10">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Projects & <span class="text-accent">Experiments</span></h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Code that solves real problems. No filler.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                
-                <a href="https://ayush-7985.github.io/stocks-calculator/" target="_blank" class="group relative glass rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-300 block" data-aos="fade-up">
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark/90 z-10"></div>
-                    <div class="h-48 bg-gradient-to-r from-green-900/40 to-emerald-900/40 flex items-center justify-center border-b border-white/5">
-                        <i class="ri-stock-line text-6xl text-green-400 group-hover:scale-110 transition-transform duration-500"></i>
-                    </div>
-                    
-                    <div class="relative z-20 p-8 pt-4">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-2xl font-bold group-hover:text-green-400 transition-colors">Stocks Calculator</h3>
-                            <i class="ri-external-link-line text-gray-400 group-hover:text-white"></i>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-4">A clean, simple web-based calculator for quick stock and financial analysis. Practical tool for investment math.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs font-mono bg-green-500/10 text-green-400 px-2 py-1 rounded">JS</span>
-                            <span class="text-xs font-mono bg-green-500/10 text-green-400 px-2 py-1 rounded">Tailwind</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="https://gigmate-temp.vercel.app/" target="_blank" class="group relative glass rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-300 block" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark/90 z-10"></div>
-                    <div class="h-48 bg-gradient-to-r from-purple-900/40 to-indigo-900/40 flex items-center justify-center border-b border-white/5">
-                        <i class="ri-team-line text-6xl text-purple-400 group-hover:scale-110 transition-transform duration-500"></i>
-                    </div>
-                    
-                    <div class="relative z-20 p-8 pt-4">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-2xl font-bold group-hover:text-purple-400 transition-colors">Freelancer MVP</h3>
-                            <i class="ri-external-link-line text-gray-400 group-hover:text-white"></i>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-4">Dynamic freelancer profile listing synced with Google Sheets in real-time. No database required.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs font-mono bg-purple-500/10 text-purple-400 px-2 py-1 rounded">React</span>
-                            <span class="text-xs font-mono bg-purple-500/10 text-purple-400 px-2 py-1 rounded">Sheets API</span>
-                        </div>
-                    </div>
-                </a>
-
-                <div class="group relative glass rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="absolute top-4 right-4 z-20">
-                         <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 text-xs rounded-full border border-yellow-500/30">Ongoing</span>
-                    </div>
-                    <div class="h-48 bg-gradient-to-r from-violet-900/40 to-fuchsia-900/40 flex items-center justify-center border-b border-white/5">
-                        <i class="ri-chat-ai-line text-6xl text-violet-400 group-hover:scale-110 transition-transform duration-500"></i>
-                    </div>
-                    <div class="relative z-20 p-8 pt-4">
-                        <h3 class="text-2xl font-bold mb-2 group-hover:text-violet-400 transition-colors">AI Chatbot Builder</h3>
-                        <p class="text-gray-400 text-sm mb-4">Custom AI chatbot powered by OpenAI API with context memory, system prompts, and a sleek chat UI — deployable on any site.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs font-mono bg-violet-500/10 text-violet-400 px-2 py-1 rounded">OpenAI API</span>
-                            <span class="text-xs font-mono bg-violet-500/10 text-violet-400 px-2 py-1 rounded">React</span>
-                            <span class="text-xs font-mono bg-violet-500/10 text-violet-400 px-2 py-1 rounded">Node.js</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group relative glass rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-48 bg-gradient-to-r from-cyan-900/40 to-blue-900/40 flex items-center justify-center border-b border-white/5">
-                        <i class="ri-stack-line text-6xl text-cyan-400 group-hover:scale-110 transition-transform duration-500"></i>
-                    </div>
-                    <div class="relative z-20 p-8 pt-4">
-                        <h3 class="text-2xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Fullstack SaaS Starter</h3>
-                        <p class="text-gray-400 text-sm mb-4">Production-ready fullstack boilerplate with auth, database, payments, and AI features — built to launch MVPs in hours.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs font-mono bg-cyan-500/10 text-cyan-400 px-2 py-1 rounded">Next.js</span>
-                            <span class="text-xs font-mono bg-cyan-500/10 text-cyan-400 px-2 py-1 rounded">Supabase</span>
-                            <span class="text-xs font-mono bg-cyan-500/10 text-cyan-400 px-2 py-1 rounded">AI APIs</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+      <!-- CHANGE HERE: Project 3 - update href when ready -->
+      <a href="#" class="g pcard rv d2">
+        <div class="pcard-top">
+          <div class="pico pi-p"><i class="ri-chat-ai-line"></i></div>
+          <span class="pbadge pb-w">In Dev</span>
         </div>
-    </section>
-
-    <section id="contact" class="py-24 px-4 relative z-10">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent -z-10"></div>
-        <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
-            <h2 class="text-4xl md:text-6xl font-bold mb-6">Let's Build <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Something Epic</span></h2>
-            
-            <p class="text-xl text-gray-400 mb-12">
-                Got a project idea? Want to collaborate? Just want to talk tech? <br>
-                My inbox is always open. 🚀
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="mailto:yprabhakar565@gmail.com" class="group px-8 py-4 rounded-full bg-white text-dark font-bold text-lg hover:bg-gray-200 transition-all hover:-translate-y-1 flex items-center justify-center gap-3">
-                    <i class="ri-mail-send-fill text-xl group-hover:text-primary transition-colors"></i> 
-                    Send Email
-                </a>
-                
-                <a href="https://github.com/ayush-7985" target="_blank" class="group px-8 py-4 rounded-full glass border border-white/10 text-white font-bold text-lg hover:border-primary/50 transition-all hover:-translate-y-1 flex items-center justify-center gap-3">
-                    <i class="ri-github-fill text-xl group-hover:text-white transition-colors"></i>
-                    GitHub
-                </a>
-
-                <a href="https://linkedin.com/in/prabhakar-yadav-247686394" target="_blank" class="group px-8 py-4 rounded-full glass border border-white/10 text-white font-bold text-lg hover:border-blue-500/50 transition-all hover:-translate-y-1 flex items-center justify-center gap-3">
-                    <i class="ri-linkedin-fill text-xl text-blue-400 group-hover:text-white transition-colors"></i>
-                    LinkedIn
-                </a>
-            </div>
+        <h3>AI Chatbot Builder</h3>
+        <p>White-label AI agent with persistent memory and custom system prompts. Embed anywhere. Built for founders who need AI without complexity.</p>
+        <div class="ptechs">
+          <span class="pt">OpenAI API</span><span class="pt">Node.js</span><span class="pt">React</span>
         </div>
-    </section>
+        <div style="font-family:var(--f-mono);font-size:clamp(.62rem,1.3vw,.72rem);color:var(--b);margin-bottom:clamp(10px,2vw,14px);">🧠 Custom context window</div>
+        <span class="plink">Preview coming <i class="ri-arrow-right-line"></i></span>
+      </a>
 
-    <footer class="py-8 border-t border-white/10 glass-nav relative z-10">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="flex justify-center items-center gap-2 mb-4 opacity-50">
-                <i class="ri-code-s-slash-line"></i>
-                <span>with</span>
-                <i class="ri-heart-fill text-red-500"></i>
-                <span>by Ayush</span>
-            </div>
-            <p class="text-gray-500 text-sm font-mono">
-                © 2025 Ayush Yadav. No templates, just code.
-            </p>
+      <!-- CHANGE HERE: Project 4 - update href when ready -->
+      <a href="#" class="g pcard rv d3" style="grid-column:span 1 !important;">
+        <div class="pcard-top">
+          <div class="pico pi-c"><i class="ri-stackshare-line"></i></div>
+          <span class="pbadge pb-w">Coming</span>
         </div>
-    </footer>
+        <h3>SaaS Starter Kit</h3>
+        <p>Production boilerplate: auth, payments, AI, Supabase. Launch MVPs in days. Already used by 3 early-stage founders.</p>
+        <div class="ptechs">
+          <span class="pt">Next.js</span><span class="pt">Stripe</span><span class="pt">Supabase</span><span class="pt">AI-Ready</span>
+        </div>
+        <div style="font-family:var(--f-mono);font-size:clamp(.62rem,1.3vw,.72rem);color:var(--d);">⭐ 3 founders using it</div>
+      </a>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize Animations
-        AOS.init({
-            once: true,
-            offset: 50,
-            duration: 800,
-            easing: 'ease-out-cubic',
-        });
+    </div>
+  </div>
+</section>
 
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const isOpen = !menu.classList.contains('translate-x-full');
-            
-            if (isOpen) {
-                menu.classList.add('translate-x-full');
-                document.body.style.overflow = 'auto';
-            } else {
-                menu.classList.remove('translate-x-full');
-                document.body.style.overflow = 'hidden';
-            }
-        }
+<!-- ════════════════════ PROCESS ════════════════════ -->
+<section id="process">
+  <div class="ctr">
+    <div class="s-head">
+      <div class="tag rv" style="display:inline-flex;"><span class="dot"></span>methodology</div>
+      <h2 class="t-lg rv d1">how I <span class="grad">build</span></h2>
+    </div>
+    <div class="proc-steps">
+      <div class="g pstep rv d1"><div class="pstep-n">01</div><i class="ri-lightbulb-flash-line" style="color:#f59e0b;"></i><h4>Idea</h4><p>Problem discovery</p></div>
+      <div class="g pstep rv d2"><div class="pstep-n">02</div><i class="ri-robot-2-line" style="color:var(--c);"></i><h4>AI Brainstorm</h4><p>ChatGPT / Claude</p></div>
+      <div class="g pstep rv d3"><div class="pstep-n">03</div><i class="ri-code-s-slash-line" style="color:var(--a);"></i><h4>Rapid Build</h4><p>Cursor + v0</p></div>
+      <div class="g pstep rv d4"><div class="pstep-n">04</div><i class="ri-cloud-line" style="color:var(--b);"></i><h4>Deploy</h4><p>Vercel / Render</p></div>
+      <div class="g pstep rv d5"><div class="pstep-n">05</div><i class="ri-repeat-line" style="color:var(--d);"></i><h4>Iterate</h4><p>Feedback loop</p></div>
+    </div>
+  </div>
+</section>
 
-        // Navbar Blur Effect on Scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-lg');
-                nav.style.background = 'rgba(2, 6, 23, 0.95)';
-            } else {
-                nav.classList.remove('shadow-lg');
-                nav.style.background = 'rgba(2, 6, 23, 0.8)';
-            }
-        });
-    </script>
+<!-- ════════════════════ CURRENTLY BUILDING / NOW ════════════════════ -->
+<section id="now">
+  <div class="ctr">
+    <div class="s-head">
+      <div class="tag rv" style="display:inline-flex;"><span class="dot"></span>right now</div>
+      <h2 class="t-lg rv d1">what I'm <span class="grad">obsessed with</span></h2>
+      <p class="s-sub rv d2">// late-night tabs I won't close</p>
+    </div>
+    <!-- CHANGE HERE: Current obsessions / what you're building now -->
+    <div class="now-grid">
+      <div class="g g-h now-card rv d1">
+        <div class="now-icon">🛠️</div>
+        <h3>Building a SaaS Starter</h3>
+        <p>A full production-ready kit with auth, AI, billing, and deployment. The thing I wished existed when I started.</p>
+        <span class="now-live">actively shipping</span>
+      </div>
+      <div class="g g-h now-card rv d2">
+        <div class="now-icon">🤖</div>
+        <h3>Exploring AI Agents</h3>
+        <p>Digging deep into multi-agent architectures, tool-use, and building things that feel genuinely intelligent.</p>
+        <span class="now-live">rabbit hole mode</span>
+      </div>
+      <div class="g g-h now-card rv d3">
+        <div class="now-icon">🎨</div>
+        <h3>Learning Motion Design</h3>
+        <p>GSAP, React Spring, Three.js — making UI feel like cinema. Animation as a design language, not decoration.</p>
+        <span class="now-live">learning</span>
+      </div>
+      <div class="g g-h now-card rv d1">
+        <div class="now-icon">📖</div>
+        <h3>Late-Night Reading</h3>
+        <p>Paul Graham essays, Stripe's architecture posts, and whatever ends up in my HN rabbit hole at 2am.</p>
+      </div>
+      <div class="g g-h now-card rv d2">
+        <div class="now-icon">🧪</div>
+        <h3>Experiments</h3>
+        <p>Small one-weekend builds. Most fail. Some become real products. The process is the point.</p>
+      </div>
+      <div class="g g-h now-card rv d3">
+        <div class="now-icon">🌐</div>
+        <h3>Building in Public</h3>
+        <p>Sharing the process, the failures, and the wins. The internet deserves more honesty about how building actually works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ EXPERIENCE ════════════════════ -->
+<section id="experience">
+  <div class="ctr">
+    <div class="s-head">
+      <div class="tag rv" style="display:inline-flex;"><span class="dot"></span>timeline</div>
+      <h2 class="t-lg rv d1">the <span class="grad">journey</span></h2>
+    </div>
+    <!-- CHANGE HERE: Experience entries -->
+    <div class="tl">
+      <div class="tl-item rv">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2025 — Now</div>
+        <div class="g tl-card">
+          <h3>AI Builder & Full-Stack Operator</h3>
+          <div class="tl-org">Independent · Remote</div>
+          <p>Building AI-native products and SaaS tools from zero. 15+ real-world projects shipped using modern stack and AI-accelerated workflows. Living by the "build fast, learn faster" rule.</p>
+        </div>
+      </div>
+      <div class="tl-item rv d1">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2024</div>
+        <div class="g tl-card">
+          <h3>Freelance Developer & AI Consultant</h3>
+          <div class="tl-org">Self-employed · Remote</div>
+          <p>Delivered custom web apps and AI automation for early-stage startups. Built Freelance Hub and AI chatbot solutions for real clients with real users.</p>
+        </div>
+      </div>
+      <div class="tl-item rv d2">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2023</div>
+        <div class="g tl-card">
+          <h3>The Deep-Dive Year</h3>
+          <div class="tl-org">Self-directed · Building in Public</div>
+          <p>Learned React, Next.js, Node.js, and the OpenAI API the only real way — by building things, breaking them, and building again. First deployments. First real users.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ TECH STACK SCROLL ════════════════════ -->
+<section id="techstack" style="padding:clamp(48px,8vw,80px) 0;">
+  <div class="ctr" style="margin-bottom:clamp(28px,5vw,44px);text-align:center;">
+    <div class="tag rv" style="display:inline-flex;"><span class="dot"></span>tech stack</div>
+    <h2 class="t-md rv d1" style="margin-top:12px;">tools I <span class="grad">master</span></h2>
+  </div>
+  <!-- CHANGE HERE: Tech chips -->
+  <div class="tk-wrap" style="margin-bottom:12px;">
+    <div class="tk-row sl">
+      <div class="tk-chip"><span class="e">⚛️</span>React</div>
+      <div class="tk-chip"><span class="e">▲</span>Next.js</div>
+      <div class="tk-chip"><span class="e">🟢</span>Node.js</div>
+      <div class="tk-chip"><span class="e">🎨</span>Tailwind</div>
+      <div class="tk-chip"><span class="e">🔷</span>TypeScript</div>
+      <div class="tk-chip"><span class="e">🤖</span>OpenAI</div>
+      <div class="tk-chip"><span class="e">🌿</span>MongoDB</div>
+      <div class="tk-chip"><span class="e">🐘</span>PostgreSQL</div>
+      <div class="tk-chip"><span class="e">⚡</span>Supabase</div>
+      <div class="tk-chip"><span class="e">🔺</span>Vercel</div>
+      <div class="tk-chip"><span class="e">🐙</span>GitHub</div>
+      <div class="tk-chip"><span class="e">🎭</span>Figma</div>
+      <div class="tk-chip"><span class="e">⚛️</span>React</div>
+      <div class="tk-chip"><span class="e">▲</span>Next.js</div>
+      <div class="tk-chip"><span class="e">🟢</span>Node.js</div>
+      <div class="tk-chip"><span class="e">🎨</span>Tailwind</div>
+      <div class="tk-chip"><span class="e">🔷</span>TypeScript</div>
+      <div class="tk-chip"><span class="e">🤖</span>OpenAI</div>
+      <div class="tk-chip"><span class="e">🌿</span>MongoDB</div>
+      <div class="tk-chip"><span class="e">🐘</span>PostgreSQL</div>
+      <div class="tk-chip"><span class="e">⚡</span>Supabase</div>
+      <div class="tk-chip"><span class="e">🔺</span>Vercel</div>
+      <div class="tk-chip"><span class="e">🐙</span>GitHub</div>
+      <div class="tk-chip"><span class="e">🎭</span>Figma</div>
+    </div>
+  </div>
+  <div class="tk-wrap">
+    <div class="tk-row sr">
+      <div class="tk-chip"><span class="e">🦜</span>LangChain</div>
+      <div class="tk-chip"><span class="e">🤖</span>Claude API</div>
+      <div class="tk-chip"><span class="e">🐳</span>Docker</div>
+      <div class="tk-chip"><span class="e">📦</span>Prisma</div>
+      <div class="tk-chip"><span class="e">💳</span>Stripe</div>
+      <div class="tk-chip"><span class="e">🔥</span>Firebase</div>
+      <div class="tk-chip"><span class="e">🌊</span>Three.js</div>
+      <div class="tk-chip"><span class="e">✨</span>GSAP</div>
+      <div class="tk-chip"><span class="e">🎯</span>v0.dev</div>
+      <div class="tk-chip"><span class="e">🖱️</span>Cursor AI</div>
+      <div class="tk-chip"><span class="e">📡</span>REST APIs</div>
+      <div class="tk-chip"><span class="e">🔑</span>Auth Systems</div>
+      <div class="tk-chip"><span class="e">🦜</span>LangChain</div>
+      <div class="tk-chip"><span class="e">🤖</span>Claude API</div>
+      <div class="tk-chip"><span class="e">🐳</span>Docker</div>
+      <div class="tk-chip"><span class="e">📦</span>Prisma</div>
+      <div class="tk-chip"><span class="e">💳</span>Stripe</div>
+      <div class="tk-chip"><span class="e">🔥</span>Firebase</div>
+      <div class="tk-chip"><span class="e">🌊</span>Three.js</div>
+      <div class="tk-chip"><span class="e">✨</span>GSAP</div>
+      <div class="tk-chip"><span class="e">🎯</span>v0.dev</div>
+      <div class="tk-chip"><span class="e">🖱️</span>Cursor AI</div>
+      <div class="tk-chip"><span class="e">📡</span>REST APIs</div>
+      <div class="tk-chip"><span class="e">🔑</span>Auth Systems</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ TESTIMONIALS ════════════════════ -->
+<section id="testimonials">
+  <div class="ctr">
+    <div class="s-head">
+      <div class="tag rv" style="display:inline-flex;"><span class="dot"></span>social proof</div>
+      <h2 class="t-lg rv d1">people <span class="grad">say stuff</span></h2>
+    </div>
+    <!-- CHANGE HERE: Testimonials -->
+    <div class="test-grid">
+      <div class="g g-h tcard rv d1">
+        <div class="tstars">★★★★★</div>
+        <p class="ttxt">"Ayush delivered our MVP in under 48 hours. The AI integration was seamless and the code was production-ready. Genuinely impressive velocity."</p>
+        <div class="tauthor">
+          <div class="tav">R</div>
+          <div><div class="tan">Rahul S.</div><div class="tar">Early-stage Founder</div></div>
+        </div>
+      </div>
+      <div class="g g-h tcard rv d2">
+        <div class="tstars">★★★★★</div>
+        <p class="ttxt">"The AI chatbot he built cut our support tickets by 40%. Clean code, great communication, shipped fast. Working together again for sure."</p>
+        <div class="tauthor">
+          <div class="tav" style="background:linear-gradient(135deg,var(--b),var(--a));">P</div>
+          <div><div class="tan">Priya M.</div><div class="tar">SaaS Founder</div></div>
+        </div>
+      </div>
+      <div class="g g-h tcard rv d3">
+        <div class="tstars">★★★★★</div>
+        <p class="ttxt">"Rarely meet developers who understand both product thinking and technical execution at this level. One of those rare finds — genuinely obsessed with shipping value."</p>
+        <div class="tauthor">
+          <div class="tav" style="background:linear-gradient(135deg,var(--c),var(--a));">A</div>
+          <div><div class="tan">Ankit T.</div><div class="tar">Tech Lead</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CERTIFICATES ════════════════════ -->
+<section id="certificates">
+  <div class="ctr">
+    <div class="s-head">
+      <div class="tag rv" style="display:inline-flex;"><span class="dot"></span>credentials</div>
+      <h2 class="t-lg rv d1">certifications & <span class="grad">wins</span></h2>
+    </div>
+    <!-- CHANGE HERE: Certificates -->
+    <div class="cert-grid">
+      <div class="g certc rv d1">
+        <div class="cert-pre"><i class="ri-code-box-line" style="color:var(--a);"></i><!-- CHANGE HERE: Replace with real cert image --><span>[Certificate Preview]</span></div>
+        <div class="cert-body"><h3>Full Stack Development</h3><p>Credential ID: replace_123</p></div>
+      </div>
+      <div class="g certc rv d2">
+        <div class="cert-pre"><i class="ri-robot-2-line" style="color:var(--c);"></i><span>AI Engineering Badge</span></div>
+        <div class="cert-body"><h3>Prompt Engineering & LLMs</h3><p>Issued: 2025</p></div>
+      </div>
+      <div class="g certc rv d3">
+        <div class="cert-pre"><i class="ri-cloud-line" style="color:var(--b);"></i><span>Deployment Mastery</span></div>
+        <div class="cert-body"><h3>Modern Web Deployment</h3><p>Vercel · CI/CD Pipeline</p></div>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--w4);font-family:var(--f-mono);font-size:clamp(.58rem,1.2vw,.68rem);margin-top:clamp(20px,4vw,32px);">// more incoming — swap placeholder image URLs when ready // CHANGE HERE</p>
+  </div>
+</section>
+
+<!-- ════════════════════ CONTACT ════════════════════ -->
+<section id="contact">
+  <div class="ctr">
+    <div class="s-head">
+      <div class="tag rv" style="display:inline-flex;"><span class="dot"></span>contact</div>
+      <h2 class="t-lg rv d1">let's build <span class="grad">something wild</span></h2>
+      <p class="s-sub rv d2">// got an idea? let's make it real.</p>
+    </div>
+    <div class="contact-grid">
+      <!-- Channels -->
+      <div class="rv-l">
+        <h3 class="t-md" style="margin-bottom:clamp(10px,2vw,12px);">Reach me</h3>
+        <p class="t-sm" style="margin-bottom:clamp(22px,4vw,30px);">AI tool, SaaS, or a crazy 2am idea — I'm in. Responds within 24h.</p>
+        <div class="contact-channels">
+          <!-- CHANGE HERE: Contact details -->
+          <a href="mailto:yprabhakar565@gmail.com" class="g cch">
+            <div class="cch-ico ci-em"><i class="ri-mail-line"></i></div>
+            <div><div class="cch-lbl">Email</div><div class="cch-val">yprabhakar565@gmail.com</div></div>
+            <i class="ri-arrow-right-line cch-arr"></i>
+          </a>
+          <!-- CHANGE HERE: WhatsApp number -->
+          <a href="https://wa.me/917985403528" target="_blank" class="g cch">
+            <div class="cch-ico ci-wa"><i class="ri-whatsapp-line"></i></div>
+            <div><div class="cch-lbl">WhatsApp</div><div class="cch-val">Direct chat</div></div>
+            <i class="ri-arrow-right-line cch-arr"></i>
+          </a>
+          <!-- CHANGE HERE: Instagram handle -->
+          <a href="https://www.instagram.com/ayush__7985/?hl=en" target="_blank" class="g cch">
+            <div class="cch-ico ci-ig"><i class="ri-instagram-line"></i></div>
+            <div><div class="cch-lbl">Instagram</div><div class="cch-val">@your_handle</div></div>
+            <i class="ri-arrow-right-line cch-arr"></i>
+          </a>
+          <a href="https://github.com/ayush-7985" target="_blank" class="g cch">
+            <div class="cch-ico ci-gh"><i class="ri-github-fill"></i></div>
+            <div><div class="cch-lbl">GitHub</div><div class="cch-val">@ayush-7985</div></div>
+            <i class="ri-arrow-right-line cch-arr"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Form -->
+      <div class="rv-r">
+        <div class="g" style="padding:clamp(22px,4vw,32px);">
+          <h3 style="font-family:var(--f-head);font-weight:800;font-size:clamp(1rem,2vw,1.15rem);margin-bottom:clamp(18px,3vw,24px);">Send a message</h3>
+          <form class="cf" id="cf">
+            <div class="cf-row">
+              <div class="fg"><label>NAME</label><input type="text" placeholder="Your name" required></div>
+              <div class="fg"><label>EMAIL</label><input type="email" placeholder="you@email.com" required></div>
+            </div>
+            <div class="fg"><label>SUBJECT</label><input type="text" placeholder="Project / Collab / Just saying hi"></div>
+            <div class="fg"><label>MESSAGE</label><textarea placeholder="Tell me about your idea..."></textarea></div>
+            <button type="submit" class="btn btn-p" style="width:100%;justify-content:center;">Send it <i class="ri-send-plane-line"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer>
+  <div class="ctr">
+    <div class="ft">
+      <!-- CHANGE HERE: Footer -->
+      <a href="#hero" class="ft-logo">ayush<em>.dev</em></a>
+      <div class="ft-links">
+        <a href="#about">about</a>
+        <a href="#projects">work</a>
+        <a href="#now">now</a>
+        <a href="#contact">contact</a>
+        <a href="https://github.com/ayush-7985" target="_blank">github</a>
+      </div>
+      <p class="ft-copy">© 2025 Ayush Yadav · made with 🔥</p>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /.wrap -->
+
+<!-- ════════════════════ JS ════════════════════ -->
+<script>
+// ── Particle Canvas BG ────────────────────────────────────────────────────────
+(function(){
+  const c=document.getElementById('bg-c');
+  if(!c)return;
+  c.width=window.innerWidth;c.height=window.innerHeight;
+  const x=c.getContext('2d');
+  let mx=c.width/2,my=c.height/2;
+  window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+  const cols=['#5d4fff','#00e5ff','#ff2d78'];
+  const pts=Array.from({length:70},()=>({
+    x:Math.random()*c.width,y:Math.random()*c.height,
+    vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,
+    r:Math.random()*1.4+.4,a:Math.random()*.4+.1,
+    col:cols[Math.floor(Math.random()*3)]
+  }));
+  function drawGrid(){
+    const g=55;x.strokeStyle='rgba(93,79,255,.05)';x.lineWidth=1;
+    for(let i=0;i<c.width/g+1;i++){x.beginPath();x.moveTo(i*g,0);x.lineTo(i*g,c.height);x.stroke();}
+    for(let j=0;j<c.height/g+1;j++){x.beginPath();x.moveTo(0,j*g);x.lineTo(c.width,j*g);x.stroke();}
+  }
+  function drawLines(){
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
+      const d=Math.sqrt(dx*dx+dy*dy);
+      if(d<110){x.beginPath();x.moveTo(pts[i].x,pts[i].y);x.lineTo(pts[j].x,pts[j].y);
+        x.strokeStyle=`rgba(93,79,255,${(1-d/110)*.1})`;x.lineWidth=.5;x.stroke();}
+    }
+  }
+  function tick(){
+    x.clearRect(0,0,c.width,c.height);drawGrid();
+    pts.forEach(p=>{
+      const dx=mx-p.x,dy=my-p.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<140){p.vx+=dx*.00012;p.vy+=dy*.00012;}
+      p.x+=p.vx;p.y+=p.vy;p.vx*=.997;p.vy*=.997;
+      if(p.x<0)p.x=c.width;if(p.x>c.width)p.x=0;
+      if(p.y<0)p.y=c.height;if(p.y>c.height)p.y=0;
+      x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);
+      x.fillStyle=p.col;x.globalAlpha=p.a;x.fill();x.globalAlpha=1;
+    });
+    drawLines();requestAnimationFrame(tick);
+  }
+  tick();
+  window.addEventListener('resize',()=>{c.width=window.innerWidth;c.height=window.innerHeight;});
+})();
+
+// ── Loader ────────────────────────────────────────────────────────────────────
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    document.getElementById('loader').classList.add('out');
+    initReveals();
+  },2500);
+});
+
+// ── Cursor ────────────────────────────────────────────────────────────────────
+const dot=document.getElementById('c-dot'),ring=document.getElementById('c-ring');
+let mx2=0,my2=0,rx=0,ry=0;
+window.addEventListener('mousemove',e=>{mx2=e.clientX;my2=e.clientY;dot.style.left=mx2+'px';dot.style.top=my2+'px';});
+function animCursor(){rx+=(mx2-rx)*.1;ry+=(my2-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animCursor);}
+animCursor();
+document.querySelectorAll('a,button,.pcard,.g-h').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-big'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-big'));
+});
+
+// ── Spotlight ─────────────────────────────────────────────────────────────────
+const sp=document.getElementById('spotlight');
+window.addEventListener('mousemove',e=>{
+  sp.style.background=`radial-gradient(700px circle at ${e.clientX}px ${e.clientY}px,rgba(93,79,255,.06),transparent 70%)`;
+});
+
+// ── Scroll Progress ───────────────────────────────────────────────────────────
+const spg=document.getElementById('sprogress');
+window.addEventListener('scroll',()=>{
+  const p=window.scrollY/(document.body.scrollHeight-window.innerHeight);
+  spg.style.width=(p*100)+'%';
+});
+
+// ── Navbar ────────────────────────────────────────────────────────────────────
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50);});
+
+// ── Mobile Menu ───────────────────────────────────────────────────────────────
+const mm=document.getElementById('m-menu');
+document.getElementById('nav-ham').addEventListener('click',()=>mm.classList.add('open'));
+document.getElementById('m-close').addEventListener('click',()=>mm.classList.remove('open'));
+document.querySelectorAll('.mlink').forEach(l=>l.addEventListener('click',()=>mm.classList.remove('open')));
+
+// ── Typewriter ────────────────────────────────────────────────────────────────
+// CHANGE HERE: Typewriter phrases
+const phrases=[
+  'creating things that feel alive.',
+  'obsessed with design, motion & code.',
+  'turning caffeine into products.',
+  'AI-powered. Human-driven.',
+  'shipping before it\'s perfect.',
+];
+let pi=0,ci=0,del=false;const tw=document.getElementById('tw');
+function ttick(){
+  const p=phrases[pi];
+  if(!del){tw.textContent=p.slice(0,++ci);if(ci===p.length){del=true;setTimeout(ttick,2400);return;}}
+  else{tw.textContent=p.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%phrases.length;}}
+  setTimeout(ttick,del?42:72);
+}
+setTimeout(ttick,3200);
+
+// ── Reveal on Scroll ──────────────────────────────────────────────────────────
+function initReveals(){
+  const els=document.querySelectorAll('.rv,.rv-l,.rv-r');
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+  },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(el=>obs.observe(el));
+}
+// Also call on DOMContentLoaded as fallback
+document.addEventListener('DOMContentLoaded',()=>{
+  if(document.getElementById('loader').classList.contains('out'))initReveals();
+});
+
+// ── AI Skill Bars ─────────────────────────────────────────────────────────────
+const sobs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const fill=e.target.querySelector('.ai-fill');
+      if(fill)setTimeout(()=>{fill.style.width=(e.target.dataset.skill||80)+'%';},250);
+    }
+  });
+},{threshold:.3});
+document.querySelectorAll('.ai-node').forEach(n=>sobs.observe(n));
+
+// ── Hero Card 3D Parallax ─────────────────────────────────────────────────────
+const hc=document.getElementById('pcard3d');
+if(hc){
+  window.addEventListener('mousemove',e=>{
+    const cx=window.innerWidth/2,cy=window.innerHeight/2;
+    const dx=(e.clientX-cx)/cx,dy=(e.clientY-cy)/cy;
+    hc.style.transform=`perspective(1000px) rotateY(${dx*7}deg) rotateX(${-dy*7}deg)`;
+  });
+}
+
+// ── Project Card Tilt + Click ─────────────────────────────────────────────────
+// Tilt only on desktop
+if(window.matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.pcard').forEach(c=>{
+    c.addEventListener('mousemove',e=>{
+      const r=c.getBoundingClientRect();
+      const dx=(e.clientX-r.left-r.width/2)/(r.width/2);
+      const dy=(e.clientY-r.top-r.height/2)/(r.height/2);
+      c.style.transform=`translateY(-6px) scale(1.015) perspective(700px) rotateY(${dx*4}deg) rotateX(${-dy*4}deg)`;
+    });
+    c.addEventListener('mouseleave',()=>c.style.transform='');
+  });
+}
+
+// ── Magnetic Buttons ──────────────────────────────────────────────────────────
+if(window.matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.btn').forEach(b=>{
+    b.addEventListener('mousemove',e=>{
+      const r=b.getBoundingClientRect();
+      const dx=(e.clientX-(r.left+r.width/2))*.22;
+      const dy=(e.clientY-(r.top+r.height/2))*.22;
+      b.style.transform=`translate(${dx}px,${dy}px)`;
+    });
+    b.addEventListener('mouseleave',()=>b.style.transform='');
+  });
+}
+
+// ── Contact Form ──────────────────────────────────────────────────────────────
+document.getElementById('cf')?.addEventListener('submit',e=>{
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  btn.innerHTML='✅ Sent! <i class="ri-check-line"></i>';
+  btn.style.background='linear-gradient(135deg,#0bffb2,#00e5ff)';
+  btn.style.color='#000';
+  setTimeout(()=>{btn.innerHTML='Send it <i class="ri-send-plane-line"></i>';btn.style.background='';btn.style.color='';e.target.reset();},3000);
+});
+</script>
 </body>
 </html>
